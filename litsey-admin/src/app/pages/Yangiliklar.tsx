@@ -255,8 +255,8 @@ export default function Yangiliklar() {
     >
       <SEO 
         title="Yangiliklar" 
-        description="5-sonli Politexnika Texnikumining so'nggi yangiliklari va muhim voqealari." 
-        keywords="Yangiliklar, Texnikum, Politexnika, Voqealar"
+        description="Farg'ona shahar 5-son texnikumining so'nggi yangiliklari va muhim voqealari." 
+        keywords="Yangiliklar, Texnikum, texnikum, Voqealar"
       />
       {/* Header */}
       <div className="flex items-center justify-between">
@@ -266,7 +266,7 @@ export default function Yangiliklar() {
         </div>
         <button
           onClick={handleAdd}
-          className="flex items-center gap-2 px-4 py-2 bg-[#0d89b1] text-white rounded-lg hover:bg-[#0a6d8f] transition-colors"
+          className="flex items-center gap-2 px-4 py-2 bg-[#0a3674] text-white rounded-lg hover:bg-[#0a6d8f] transition-colors"
         >
           <Plus className="w-5 h-5" />
           Yangi yangilik qo'shish
@@ -283,7 +283,7 @@ export default function Yangiliklar() {
               placeholder="Yangilik qidirish..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 bg-[#f8fafc] dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-lg text-sm focus:outline-none focus:border-[#0d89b1] dark:text-gray-100 dark:placeholder-gray-500"
+              className="w-full pl-10 pr-4 py-2 bg-[#f8fafc] dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-lg text-sm focus:outline-none focus:border-[#0a3674] dark:text-gray-100 dark:placeholder-gray-500"
             />
           </div>
         </div>
@@ -361,7 +361,7 @@ export default function Yangiliklar() {
                       <div className="flex items-center gap-2">
                         <button
                           onClick={() => handleEdit(item)}
-                          className="p-2 text-[#0d89b1] hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded transition-colors"
+                          className="p-2 text-[#0a3674] hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded transition-colors"
                         >
                           <Edit className="w-4 h-4" />
                         </button>
@@ -414,7 +414,7 @@ export default function Yangiliklar() {
                         onClick={() => setActiveTab(lang.id as "uz" | "ru")}
                         className={`px-4 py-2 text-xs font-bold rounded-lg transition-all ${
                           activeTab === lang.id
-                            ? "bg-white dark:bg-gray-700 text-[#0d89b1] shadow-sm"
+                            ? "bg-white dark:bg-gray-700 text-[#0a3674] shadow-sm"
                             : "text-gray-500 hover:text-gray-700 dark:text-gray-400"
                         }`}
                       >
@@ -441,7 +441,7 @@ export default function Yangiliklar() {
                     <select
                       value={formData.status}
                       onChange={(e) => setFormData({ ...formData, status: e.target.value })}
-                      className="w-full px-4 py-2.5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-4 focus:ring-[#0d89b1]/10 focus:border-[#0d89b1] outline-none transition-all dark:text-gray-100"
+                      className="w-full px-4 py-2.5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-4 focus:ring-[#0a3674]/10 focus:border-[#0a3674] outline-none transition-all dark:text-gray-100"
                     >
                       <option value="draft">Qoralama (Draft)</option>
                       <option value="published">Nashr qilish (Published)</option>
@@ -455,7 +455,7 @@ export default function Yangiliklar() {
                     <select
                       value={String(formData.is_featured)}
                       onChange={(e) => setFormData({ ...formData, is_featured: e.target.value === "true" })}
-                      className="w-full px-4 py-2.5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-4 focus:ring-[#0d89b1]/10 focus:border-[#0d89b1] outline-none transition-all dark:text-gray-100"
+                      className="w-full px-4 py-2.5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-4 focus:ring-[#0a3674]/10 focus:border-[#0a3674] outline-none transition-all dark:text-gray-100"
                     >
                       <option value="false">Yo'q</option>
                       <option value="true">Ha</option>
@@ -470,7 +470,7 @@ export default function Yangiliklar() {
                       type="date"
                       value={formData.published_at}
                       onChange={(e) => setFormData({ ...formData, published_at: e.target.value })}
-                      className="w-full px-4 py-2.5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-4 focus:ring-[#0d89b1]/10 focus:border-[#0d89b1] outline-none transition-all dark:text-gray-100"
+                      className="w-full px-4 py-2.5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-4 focus:ring-[#0a3674]/10 focus:border-[#0a3674] outline-none transition-all dark:text-gray-100"
                       required
                     />
                   </div>
@@ -489,7 +489,7 @@ export default function Yangiliklar() {
                         const field = `title_${activeTab}` as keyof typeof formData;
                         setFormData({ ...formData, [field]: e.target.value });
                       }}
-                      className="w-full px-5 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-4 focus:ring-[#0d89b1]/10 focus:border-[#0d89b1] outline-none transition-all dark:text-gray-100"
+                      className="w-full px-5 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-4 focus:ring-[#0a3674]/10 focus:border-[#0a3674] outline-none transition-all dark:text-gray-100"
                       required={activeTab === "uz"}
                       placeholder={`${activeTab.toUpperCase()} tilida sarlavha...`}
                     />
@@ -506,7 +506,7 @@ export default function Yangiliklar() {
                         setFormData({ ...formData, [field]: e.target.value });
                       }}
                       rows={3}
-                      className="w-full px-5 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-4 focus:ring-[#0d89b1]/10 focus:border-[#0d89b1] outline-none transition-all dark:text-gray-100 resize-none"
+                      className="w-full px-5 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-4 focus:ring-[#0a3674]/10 focus:border-[#0a3674] outline-none transition-all dark:text-gray-100 resize-none"
                       placeholder={`${activeTab.toUpperCase()} tilida qisqa tavsif...`}
                     />
                   </div>
@@ -522,7 +522,7 @@ export default function Yangiliklar() {
                         setFormData({ ...formData, [field]: e.target.value });
                       }}
                       rows={8}
-                      className="w-full px-5 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-4 focus:ring-[#0d89b1]/10 focus:border-[#0d89b1] outline-none transition-all dark:text-gray-100"
+                      className="w-full px-5 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-4 focus:ring-[#0a3674]/10 focus:border-[#0a3674] outline-none transition-all dark:text-gray-100"
                       required={activeTab === "uz"}
                       placeholder={`${activeTab.toUpperCase()} tilida to'liq matn...`}
                     />
@@ -551,7 +551,7 @@ export default function Yangiliklar() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="flex items-center gap-2 px-12 py-3 bg-[#0d89b1] text-white font-bold rounded-xl hover:bg-[#0a6d8f] transition-all shadow-xl shadow-[#0d89b1]/20 active:scale-[0.98] disabled:opacity-50"
+                    className="flex items-center gap-2 px-12 py-3 bg-[#0a3674] text-white font-bold rounded-xl hover:bg-[#0a6d8f] transition-all shadow-xl shadow-[#0a3674]/20 active:scale-[0.98] disabled:opacity-50"
                   >
                     {isSubmitting && <Loader2 className="w-5 h-5 animate-spin" />}
                     {editingNews ? "Saqlash" : "Qo'shish"}

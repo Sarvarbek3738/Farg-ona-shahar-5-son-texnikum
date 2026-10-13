@@ -79,12 +79,12 @@ export function Sidebar() {
           <div className="flex items-center gap-3">
             <ImageWithFallback
               src="/logoicon.png"
-              alt="5-son Politexnika Texnikumi Logo"
+              alt="5-son Texnikumi Logo"
               className="w-10 h-10"
               objectFit="contain"
             />
             <div className="text-center">
-              <h1 className="text-lg font-bold text-[#0d89b1]">5-son Texnikum</h1>
+              <h1 className="text-lg font-bold text-[#0a3674]">5-son Texnikum</h1>
               <p className="text-xs text-[#64748b] dark:text-gray-400">Admin Panel</p>
             </div>
           </div>
@@ -101,7 +101,7 @@ export function Sidebar() {
                   className={({ isActive }) =>
                     `flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
                       isActive
-                        ? "bg-[#0d89b1] text-white"
+                        ? "bg-[#0a3674] text-white"
                         : "text-[#1f2937] dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800"
                     }`
                   }
@@ -131,7 +131,7 @@ export function Sidebar() {
               {isEducationOpen && (
                 <ul className="mt-1 ml-12 space-y-1">
                   <li>
-                    <button className="w-full text-left px-4 py-2 text-sm text-[#64748b] dark:text-gray-400 hover:text-[#0d89b1] transition-colors">
+                    <button className="w-full text-left px-4 py-2 text-sm text-[#64748b] dark:text-gray-400 hover:text-[#0a3674] transition-colors">
                       Fanlar
                     </button>
                   </li>
@@ -140,7 +140,7 @@ export function Sidebar() {
                       to="/dars-jadvali"
                       className={({ isActive }) =>
                         `w-full text-left px-4 py-2 text-sm transition-colors flex items-center gap-2 ${
-                          isActive ? "text-[#0d89b1] font-bold" : "text-[#64748b] dark:text-gray-400 hover:text-[#0d89b1]"
+                          isActive ? "text-[#0a3674] font-bold" : "text-[#64748b] dark:text-gray-400 hover:text-[#0a3674]"
                         }`
                       }
                     >

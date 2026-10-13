@@ -59,7 +59,7 @@ export function Navbar() {
                 {user?.role || "Administrator"}
               </p>
             </div>
-            <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-[#0d89b1]/20 relative">
+            <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-[#0a3674]/20 relative">
               <ImageWithFallback
                 src="/logoicon.png"
                 alt="Admin"

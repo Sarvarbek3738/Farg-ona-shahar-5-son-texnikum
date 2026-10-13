@@ -17,9 +17,9 @@ export function SEO({
   url = "https://admin.5texnikum.uz/",
   type = "website",
 }: SEOProps) {
-  const siteTitle = "5-son Politexnika Texnikumi - Admin Panel";
+  const siteTitle = "5-son Texnikumi - Admin Panel";
   const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
-  const defaultDescription = "5-sonli politexnika texnikumi rasmiy boshqaruv paneli. Yangiliklar, e'lonlar va o'quv jarayonini boshqarish.";
+  const defaultDescription = "Farg'ona shahar 5-son texnikumi rasmiy boshqaruv paneli. Yangiliklar, e'lonlar va o'quv jarayonini boshqarish.";
 
   return (
     <Helmet>

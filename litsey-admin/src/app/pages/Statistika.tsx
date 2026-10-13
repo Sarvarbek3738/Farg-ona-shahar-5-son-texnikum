@@ -177,7 +177,7 @@ export default function Statistika() {
         </div>
         <button
           onClick={handleAdd}
-          className="flex items-center gap-2 px-6 py-3 bg-[#0d89b1] text-white font-bold rounded-xl hover:bg-[#0a6d8f] transition-all shadow-lg shadow-[#0d89b1]/20 active:scale-[0.98]"
+          className="flex items-center gap-2 px-6 py-3 bg-[#0a3674] text-white font-bold rounded-xl hover:bg-[#0a6d8f] transition-all shadow-lg shadow-[#0a3674]/20 active:scale-[0.98]"
         >
           <Plus className="w-5 h-5" />
           Yangi statistika
@@ -207,14 +207,14 @@ export default function Statistika() {
             </div>
 
             <div className="flex flex-col items-center text-center space-y-4">
-              <div className="p-4 bg-[#0d89b1]/10 text-[#0d89b1] rounded-2xl">
+              <div className="p-4 bg-[#0a3674]/10 text-[#0a3674] rounded-2xl">
                 <DynamicIcon name={stat.icon || "chart"} className="w-8 h-8" />
               </div>
               <div>
                 <div className="text-4xl font-black text-[#1f2937] dark:text-gray-100 mb-1">
                   {stat.value}+
                 </div>
-                <div className="text-sm font-bold text-[#0d89b1] uppercase tracking-wider">
+                <div className="text-sm font-bold text-[#0a3674] uppercase tracking-wider">
                   {stat.label_uz}
                 </div>
               </div>
@@ -253,7 +253,7 @@ export default function Statistika() {
                       onClick={() => setActiveTab(lang.id as "uz" | "ru")}
                       className={`px-4 py-2 text-xs font-bold rounded-lg transition-all ${
                         activeTab === lang.id
-                          ? "bg-white dark:bg-gray-700 text-[#0d89b1] shadow-sm"
+                          ? "bg-white dark:bg-gray-700 text-[#0a3674] shadow-sm"
                           : "text-gray-500 hover:text-gray-700 dark:text-gray-400"
                       }`}
                     >
@@ -278,7 +278,7 @@ export default function Statistika() {
                     type="text"
                     value={formData.key}
                     onChange={(e) => setFormData({ ...formData, key: e.target.value })}
-                    className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-4 focus:ring-[#0d89b1]/10 outline-none transition-all"
+                    className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-4 focus:ring-[#0a3674]/10 outline-none transition-all"
                     placeholder="Masalan: students_count"
                     required
                     disabled={!!editingStat}
@@ -295,15 +295,15 @@ export default function Statistika() {
                         setFormData({ ...formData, value: val === "" ? 0 : Number(val) });
                       }
                     }}
-                    className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-4 focus:ring-[#0d89b1]/10 outline-none transition-all"
+                    className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-4 focus:ring-[#0a3674]/10 outline-none transition-all"
                     required
                   />
                 </div>
               </div>
 
               <div className="p-8 bg-gray-50 dark:bg-gray-800/50 rounded-2xl border border-gray-100 dark:border-gray-700 space-y-6">
-                <h4 className="text-xs font-bold text-[#0d89b1] uppercase tracking-widest flex items-center gap-2">
-                  <span className="w-4 h-[1px] bg-[#0d89b1]" />
+                <h4 className="text-xs font-bold text-[#0a3674] uppercase tracking-widest flex items-center gap-2">
+                  <span className="w-4 h-[1px] bg-[#0a3674]" />
                   {languages.find(l => l.id === activeTab)?.label} tilidagi nomi
                 </h4>
                 
@@ -320,7 +320,7 @@ export default function Statistika() {
                       const field = `label_${activeTab}` as keyof typeof formData;
                       setFormData({ ...formData, [field]: e.target.value });
                     }}
-                    className="w-full px-5 py-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-4 focus:ring-[#0d89b1]/10 outline-none transition-all"
+                    className="w-full px-5 py-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-4 focus:ring-[#0a3674]/10 outline-none transition-all"
                     required={activeTab === "uz"}
                     placeholder="Masalan: O'quvchilar"
                   />
@@ -334,7 +334,7 @@ export default function Statistika() {
                     type="text"
                     value={formData.icon}
                     onChange={(e) => setFormData({ ...formData, icon: e.target.value })}
-                    className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-4 focus:ring-[#0d89b1]/10 outline-none transition-all"
+                    className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-4 focus:ring-[#0a3674]/10 outline-none transition-all"
                     placeholder="Masalan: users, book, trophy"
                   />
                 </div>
@@ -351,7 +351,7 @@ export default function Statistika() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="flex items-center gap-2 px-12 py-4 bg-[#0d89b1] text-white font-bold rounded-2xl hover:bg-[#0a6d8f] transition-all shadow-xl shadow-[#0d89b1]/20 active:scale-[0.98] disabled:opacity-50"
+                  className="flex items-center gap-2 px-12 py-4 bg-[#0a3674] text-white font-bold rounded-2xl hover:bg-[#0a6d8f] transition-all shadow-xl shadow-[#0a3674]/20 active:scale-[0.98] disabled:opacity-50"
                 >
                   {isSubmitting ? <Loader2 className="w-5 h-5 animate-spin" /> : <Save className="w-5 h-5" />}
                   Saqlash

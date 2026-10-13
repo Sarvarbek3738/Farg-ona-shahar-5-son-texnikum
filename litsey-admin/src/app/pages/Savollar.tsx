@@ -230,7 +230,7 @@ export default function Savollar() {
         </div>
         <button
           onClick={handleAdd}
-          className="flex items-center gap-2 px-6 py-3 bg-[#0d89b1] text-white font-bold rounded-xl hover:bg-[#0a6d8f] transition-all shadow-lg shadow-[#0d89b1]/20 active:scale-[0.98]"
+          className="flex items-center gap-2 px-6 py-3 bg-[#0a3674] text-white font-bold rounded-xl hover:bg-[#0a6d8f] transition-all shadow-lg shadow-[#0a3674]/20 active:scale-[0.98]"
         >
           <Plus className="w-5 h-5" />
           Yangi savol
@@ -239,13 +239,13 @@ export default function Savollar() {
 
       {/* Search */}
       <div className="relative group max-w-md">
-        <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 group-focus-within:text-[#0d89b1] transition-colors" />
+        <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 group-focus-within:text-[#0a3674] transition-colors" />
         <input
           type="text"
           placeholder="Savollarni qidirish..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-full pl-12 pr-4 py-3 bg-white dark:bg-[#1f2937] border border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-4 focus:ring-[#0d89b1]/10 focus:border-[#0d89b1] outline-none transition-all shadow-sm"
+          className="w-full pl-12 pr-4 py-3 bg-white dark:bg-[#1f2937] border border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-4 focus:ring-[#0a3674]/10 focus:border-[#0a3674] outline-none transition-all shadow-sm"
         />
       </div>
 
@@ -258,7 +258,7 @@ export default function Savollar() {
           >
             <div className="flex items-start justify-between gap-4">
               <div className="flex items-start gap-4">
-                <div className="p-3 bg-[#0d89b1]/10 text-[#0d89b1] rounded-xl shrink-0">
+                <div className="p-3 bg-[#0a3674]/10 text-[#0a3674] rounded-xl shrink-0">
                   <HelpCircle className="w-6 h-6" />
                 </div>
                 <div className="space-y-1">
@@ -335,7 +335,7 @@ export default function Savollar() {
                       onClick={() => setActiveTab(lang.id as "uz" | "ru")}
                       className={`px-4 py-2 text-xs font-bold rounded-lg transition-all ${
                         activeTab === lang.id
-                          ? "bg-white dark:bg-gray-700 text-[#0d89b1] shadow-sm"
+                          ? "bg-white dark:bg-gray-700 text-[#0a3674] shadow-sm"
                           : "text-gray-500 hover:text-gray-700 dark:text-gray-400"
                       }`}
                     >
@@ -355,8 +355,8 @@ export default function Savollar() {
             <form onSubmit={handleSubmit} className="p-10 space-y-10">
               {/* Language Specific Fields */}
               <div className="p-8 bg-gray-50 dark:bg-gray-800/50 rounded-2xl border border-gray-100 dark:border-gray-700 space-y-6">
-                <h4 className="text-xs font-bold text-[#0d89b1] uppercase tracking-widest flex items-center gap-2">
-                  <span className="w-4 h-[1px] bg-[#0d89b1]" />
+                <h4 className="text-xs font-bold text-[#0a3674] uppercase tracking-widest flex items-center gap-2">
+                  <span className="w-4 h-[1px] bg-[#0a3674]" />
                   {languages.find(l => l.id === activeTab)?.label} tilidagi ma'lumotlar
                 </h4>
                 
@@ -374,7 +374,7 @@ export default function Savollar() {
                         const field = `question_${activeTab}` as keyof typeof formData;
                         setFormData({ ...formData, [field]: e.target.value });
                       }}
-                      className="w-full px-5 py-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-4 focus:ring-[#0d89b1]/10 focus:border-[#0d89b1] outline-none transition-all"
+                      className="w-full px-5 py-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-4 focus:ring-[#0a3674]/10 focus:border-[#0a3674] outline-none transition-all"
                       required={activeTab === "uz"}
                       placeholder={`${activeTab.toUpperCase()} tilida savolni kiriting...`}
                     />
@@ -392,7 +392,7 @@ export default function Savollar() {
                         setFormData({ ...formData, [field]: e.target.value });
                       }}
                       rows={4}
-                      className="w-full px-5 py-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-4 focus:ring-[#0d89b1]/10 focus:border-[#0d89b1] outline-none transition-all resize-none"
+                      className="w-full px-5 py-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-4 focus:ring-[#0a3674]/10 focus:border-[#0a3674] outline-none transition-all resize-none"
                       required={activeTab === "uz"}
                       placeholder={`${activeTab.toUpperCase()} tilida javobni kiriting...`}
                     />
@@ -414,7 +414,7 @@ export default function Savollar() {
                       <select
                         value={formData.category}
                         onChange={(e) => setFormData({ ...formData, category: e.target.value as FAQ["category"] })}
-                        className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-4 focus:ring-[#0d89b1]/10 focus:border-[#0d89b1] outline-none transition-all"
+                        className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-4 focus:ring-[#0a3674]/10 focus:border-[#0a3674] outline-none transition-all"
                       >
                         {categories.map((c) => (
                           <option key={c.id} value={c.id}>{c.label}</option>
@@ -430,7 +430,7 @@ export default function Savollar() {
                             id="is_featured"
                             checked={formData.is_featured}
                             onChange={(e) => setFormData({ ...formData, is_featured: e.target.checked })}
-                            className="w-5 h-5 rounded-md text-[#0d89b1] focus:ring-[#0d89b1]"
+                            className="w-5 h-5 rounded-md text-[#0a3674] focus:ring-[#0a3674]"
                           />
                           <label htmlFor="is_featured" className="text-sm font-bold text-gray-700 dark:text-gray-300 cursor-pointer">
                             Saralangan
@@ -445,7 +445,7 @@ export default function Savollar() {
                         id="is_active_faq"
                         checked={formData.is_active}
                         onChange={(e) => setFormData({ ...formData, is_active: e.target.checked })}
-                        className="w-5 h-5 rounded-md text-[#0d89b1] focus:ring-[#0d89b1]"
+                        className="w-5 h-5 rounded-md text-[#0a3674] focus:ring-[#0a3674]"
                       />
                       <label htmlFor="is_active_faq" className="text-sm font-bold text-gray-700 dark:text-gray-300 cursor-pointer">
                         Faol holatda (saytda ko'rinadi)
@@ -454,12 +454,12 @@ export default function Savollar() {
                   </div>
                 </div>
 
-                <div className="space-y-6 flex flex-col justify-center p-8 bg-[#0d89b1]/5 dark:bg-[#0d89b1]/10 rounded-2xl border border-[#0d89b1]/20">
+                <div className="space-y-6 flex flex-col justify-center p-8 bg-[#0a3674]/5 dark:bg-[#0a3674]/10 rounded-2xl border border-[#0a3674]/20">
                   <div className="p-4 bg-white dark:bg-gray-800 rounded-2xl shadow-sm mb-4 self-center">
-                    <HelpCircle className="w-12 h-12 text-[#0d89b1]" />
+                    <HelpCircle className="w-12 h-12 text-[#0a3674]" />
                   </div>
-                  <h4 className="text-lg font-bold text-[#0d89b1] text-center mb-2">Maslahat</h4>
-                  <p className="text-sm text-[#0d89b1]/80 dark:text-[#0d89b1]/90 text-center leading-relaxed">
+                  <h4 className="text-lg font-bold text-[#0a3674] text-center mb-2">Maslahat</h4>
+                  <p className="text-sm text-[#0a3674]/80 dark:text-[#0a3674]/90 text-center leading-relaxed">
                     Savol va javoblarni imkon qadar qisqa va tushunarli qilib yozing. 
                     Saralangan savollar asosiy sahifada yuqori qismda ko'rsatiladi.
                   </p>
@@ -477,7 +477,7 @@ export default function Savollar() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="flex items-center gap-2 px-12 py-4 bg-[#0d89b1] text-white font-bold rounded-2xl hover:bg-[#0a6d8f] transition-all shadow-xl shadow-[#0d89b1]/20 active:scale-[0.98] disabled:opacity-50"
+                  className="flex items-center gap-2 px-12 py-4 bg-[#0a3674] text-white font-bold rounded-2xl hover:bg-[#0a6d8f] transition-all shadow-xl shadow-[#0a3674]/20 active:scale-[0.98] disabled:opacity-50"
                 >
                   {isSubmitting ? <Loader2 className="w-5 h-5 animate-spin" /> : <Save className="w-5 h-5" />}
                   Saqlash

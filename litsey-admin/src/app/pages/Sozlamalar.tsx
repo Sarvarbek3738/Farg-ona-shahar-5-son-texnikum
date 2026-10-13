@@ -190,7 +190,7 @@ export default function Sozlamalar() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white dark:bg-[#1f2937] p-5 md:p-6 rounded-lg shadow-sm border border-gray-100 dark:border-gray-800">
         <div>
           <h1 className="text-xl md:text-2xl font-extrabold text-gray-900 dark:text-white flex items-center gap-3">
-            <Building className="w-6 h-6 md:w-8 md:h-8 text-[#0d89b1]" />
+            <Building className="w-6 h-6 md:w-8 md:h-8 text-[#0a3674]" />
             Sozlamalar
           </h1>
           <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
@@ -201,7 +201,7 @@ export default function Sozlamalar() {
           type="submit"
           form="settings-form"
           disabled={isSaving}
-          className="flex items-center justify-center gap-2 px-6 py-2.5 bg-[#0d89b1] text-white rounded-lg hover:bg-[#0a6d8f] transition-all shadow-lg hover:shadow-[#0d89b1]/20 active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none font-semibold text-sm md:text-base w-full sm:w-auto"
+          className="flex items-center justify-center gap-2 px-6 py-2.5 bg-[#0a3674] text-white rounded-lg hover:bg-[#0a6d8f] transition-all shadow-lg hover:shadow-[#0a3674]/20 active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none font-semibold text-sm md:text-base w-full sm:w-auto"
         >
           {isSaving ? <Loader2 className="w-5 h-5 animate-spin" /> : <Save className="w-5 h-5" />}
           {isSaving ? "Saqlanmoqda..." : "Saqlash"}
@@ -214,7 +214,7 @@ export default function Sozlamalar() {
           {/* Brand Identity */}
           <section className="bg-white dark:bg-[#1f2937] p-5 md:p-8 rounded-lg shadow-sm border border-gray-100 dark:border-gray-800 transition-all hover:shadow-md">
             <div className="flex items-center gap-3 mb-6 md:mb-8 pb-4 border-b border-gray-50 dark:border-gray-800">
-              <Globe className="w-5 h-5 md:w-6 md:h-6 text-[#0d89b1]" />
+              <Globe className="w-5 h-5 md:w-6 md:h-6 text-[#0a3674]" />
               <h2 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white">Brend ma'lumotlari</h2>
             </div>
             
@@ -239,7 +239,7 @@ export default function Sozlamalar() {
                         onClick={() => setActiveTab(lang.id as "uz" | "ru")}
                         className={`px-3 py-1 text-xs font-bold rounded-md transition-all ${
                           activeTab === lang.id 
-                            ? "bg-white dark:bg-gray-700 text-[#0d89b1] shadow-sm" 
+                            ? "bg-white dark:bg-gray-700 text-[#0a3674] shadow-sm" 
                             : "text-gray-500 hover:text-gray-700 dark:text-gray-400"
                         }`}
                       >
@@ -269,7 +269,7 @@ export default function Sozlamalar() {
                           }
                         });
                       }}
-                      className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#0d89b1]/20 focus:border-[#0d89b1] outline-none transition-all dark:text-white text-sm"
+                      className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#0a3674]/20 focus:border-[#0a3674] outline-none transition-all dark:text-white text-sm"
                       placeholder={`Qisqa nomi...`}
                       required={activeTab === "uz"}
                     />
@@ -287,7 +287,7 @@ export default function Sozlamalar() {
                           setFormData({ ...formData, established_year: val === "" ? 0 : Number(val) });
                         }
                       }}
-                      className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#0d89b1]/20 focus:border-[#0d89b1] outline-none transition-all dark:text-white text-sm"
+                      className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#0a3674]/20 focus:border-[#0a3674] outline-none transition-all dark:text-white text-sm"
                       placeholder="2000"
                     />
                   </div>
@@ -311,7 +311,7 @@ export default function Sozlamalar() {
                         }
                       });
                     }}
-                    className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#0d89b1]/20 focus:border-[#0d89b1] outline-none transition-all dark:text-white font-medium text-sm"
+                    className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#0a3674]/20 focus:border-[#0a3674] outline-none transition-all dark:text-white font-medium text-sm"
                     placeholder={`Texnikumning to'liq nomi...`}
                     required={activeTab === "uz"}
                   />
@@ -323,7 +323,7 @@ export default function Sozlamalar() {
           {/* Contact Information */}
           <section className="bg-white dark:bg-[#1f2937] p-5 md:p-8 rounded-lg shadow-sm border border-gray-100 dark:border-gray-800 transition-all hover:shadow-md">
             <div className="flex items-center gap-3 mb-6 md:mb-8 pb-4 border-b border-gray-50 dark:border-gray-800">
-              <Phone className="w-5 h-5 md:w-6 md:h-6 text-[#0d89b1]" />
+              <Phone className="w-5 h-5 md:w-6 md:h-6 text-[#0a3674]" />
               <h2 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white">Aloqa ma'lumotlari</h2>
             </div>
             
@@ -348,7 +348,7 @@ export default function Sozlamalar() {
                         }
                       });
                     }}
-                    className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#0d89b1]/20 focus:border-[#0d89b1] outline-none transition-all dark:text-white text-sm"
+                    className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#0a3674]/20 focus:border-[#0a3674] outline-none transition-all dark:text-white text-sm"
                     placeholder={`Manzil...`}
                   />
                 </div>
@@ -360,7 +360,7 @@ export default function Sozlamalar() {
                     type="text"
                     value={formData.website || ""}
                     onChange={(e) => setFormData({ ...formData, website: e.target.value })}
-                    className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#0d89b1]/20 focus:border-[#0d89b1] outline-none transition-all dark:text-white text-sm"
+                    className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#0a3674]/20 focus:border-[#0a3674] outline-none transition-all dark:text-white text-sm"
                     placeholder="www.5texnikum.uz"
                   />
                 </div>
@@ -375,7 +375,7 @@ export default function Sozlamalar() {
                     type="tel"
                     value={formData.phone || ""}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#0d89b1]/20 focus:border-[#0d89b1] outline-none transition-all dark:text-white text-sm"
+                    className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#0a3674]/20 focus:border-[#0a3674] outline-none transition-all dark:text-white text-sm"
                     placeholder="+998 90 123 45 67"
                   />
                 </div>
@@ -387,7 +387,7 @@ export default function Sozlamalar() {
                     type="email"
                     value={formData.email || ""}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#0d89b1]/20 focus:border-[#0d89b1] outline-none transition-all dark:text-white text-sm"
+                    className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#0a3674]/20 focus:border-[#0a3674] outline-none transition-all dark:text-white text-sm"
                     placeholder="info@5texnikum.uz"
                   />
                 </div>
@@ -400,7 +400,7 @@ export default function Sozlamalar() {
         <div className="lg:col-span-4">
           <section className="bg-white dark:bg-[#1f2937] p-5 md:p-8 rounded-lg shadow-sm border border-gray-100 dark:border-gray-800 transition-all hover:shadow-md sticky top-6">
             <div className="flex items-center gap-3 mb-6 md:mb-8 pb-4 border-b border-gray-50 dark:border-gray-800">
-              <Share2 className="w-5 h-5 md:w-6 md:h-6 text-[#0d89b1]" />
+              <Share2 className="w-5 h-5 md:w-6 md:h-6 text-[#0a3674]" />
               <h2 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white">Ijtimoiy tarmoqlar</h2>
             </div>
             
@@ -412,7 +412,7 @@ export default function Sozlamalar() {
                     type="text"
                     value={formData.telegram || ""}
                     onChange={(e) => setFormData({ ...formData, telegram: e.target.value })}
-                    className="w-full pl-4 pr-10 py-2.5 md:py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:border-[#0d89b1] outline-none transition-all dark:text-white text-sm"
+                    className="w-full pl-4 pr-10 py-2.5 md:py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:border-[#0a3674] outline-none transition-all dark:text-white text-sm"
                     placeholder="t.me/texnikum5_uz"
                   />
                   <div className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400">
@@ -427,7 +427,7 @@ export default function Sozlamalar() {
                     type="text"
                     value={formData.instagram || ""}
                     onChange={(e) => setFormData({ ...formData, instagram: e.target.value })}
-                    className="w-full pl-4 pr-10 py-2.5 md:py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:border-[#0d89b1] outline-none transition-all dark:text-white text-sm"
+                    className="w-full pl-4 pr-10 py-2.5 md:py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:border-[#0a3674] outline-none transition-all dark:text-white text-sm"
                     placeholder="instagram.com/texnikum5_uz"
                   />
                   <div className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400">
@@ -443,7 +443,7 @@ export default function Sozlamalar() {
                     type="text"
                     value={formData.youtube || ""}
                     onChange={(e) => setFormData({ ...formData, youtube: e.target.value })}
-                    className="w-full pl-4 pr-10 py-2.5 md:py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:border-[#0d89b1] outline-none transition-all dark:text-white text-sm"
+                    className="w-full pl-4 pr-10 py-2.5 md:py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:border-[#0a3674] outline-none transition-all dark:text-white text-sm"
                     placeholder="youtube.com/@texnikum5"
                   />
                   <div className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400">

@@ -224,7 +224,7 @@ export default function DarsJadvali() {
         </div>
         <button
           onClick={handleAdd}
-          className="flex items-center gap-2 px-5 py-2.5 bg-[#0d89b1] text-white font-bold rounded-lg hover:bg-[#0a6d8f] transition-all shadow-lg shadow-[#0d89b1]/20 active:scale-[0.98] w-full sm:w-auto justify-center"
+          className="flex items-center gap-2 px-5 py-2.5 bg-[#0a3674] text-white font-bold rounded-lg hover:bg-[#0a6d8f] transition-all shadow-lg shadow-[#0a3674]/20 active:scale-[0.98] w-full sm:w-auto justify-center"
         >
           <Plus className="w-5 h-5" />
           Yangi jadval
@@ -240,7 +240,7 @@ export default function DarsJadvali() {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Jadval nomi bo'yicha qidirish..."
-            className="w-full pl-10 pr-4 py-2 border border-gray-200 dark:border-gray-700 rounded-lg bg-gray-50 dark:bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-[#0d89b1]"
+            className="w-full pl-10 pr-4 py-2 border border-gray-200 dark:border-gray-700 rounded-lg bg-gray-50 dark:bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-[#0a3674]"
           />
         </div>
       </div>
@@ -265,7 +265,7 @@ export default function DarsJadvali() {
               >
                 <div>
                   <div className="flex items-start justify-between gap-3 mb-4">
-                    <div className="p-3 bg-[#0d89b1]/10 rounded-lg text-[#0d89b1]">
+                    <div className="p-3 bg-[#0a3674]/10 rounded-lg text-[#0a3674]">
                       <FileText className="w-6 h-6" />
                     </div>
                     <span
@@ -296,7 +296,7 @@ export default function DarsJadvali() {
                       href={fileUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0d89b1] hover:underline"
+                      className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0a3674] hover:underline"
                     >
                       <Download className="w-4 h-4" />
                       Faylni ko'rish
@@ -308,7 +308,7 @@ export default function DarsJadvali() {
                   <div className="flex items-center gap-2">
                     <button
                       onClick={() => handleEdit(item)}
-                      className="p-2 text-gray-500 hover:text-[#0d89b1] hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
+                      className="p-2 text-gray-500 hover:text-[#0a3674] hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
                       title="Tahrirlash"
                     >
                       <Edit className="w-4 h-4" />
@@ -366,7 +366,7 @@ export default function DarsJadvali() {
                       onClick={() => setActiveTab(lang.id)}
                       className={`px-3 py-1 text-xs font-bold rounded-md transition-all ${
                         activeTab === lang.id
-                          ? "bg-white dark:bg-gray-700 text-[#0d89b1] shadow-sm"
+                          ? "bg-white dark:bg-gray-700 text-[#0a3674] shadow-sm"
                           : "text-gray-500 hover:text-gray-700 dark:text-gray-400"
                       }`}
                     >
@@ -386,7 +386,7 @@ export default function DarsJadvali() {
             {/* Modal Body */}
             <form onSubmit={handleSubmit} className="p-6 md:p-8 space-y-6 overflow-y-auto flex-1">
               <div className="p-5 bg-gray-50 dark:bg-gray-800/60 rounded-xl border border-gray-100 dark:border-gray-700 space-y-4">
-                <h4 className="text-xs font-bold text-[#0d89b1] uppercase tracking-wider">
+                <h4 className="text-xs font-bold text-[#0a3674] uppercase tracking-wider">
                   {languages.find((l) => l.id === activeTab)?.label} tilidagi ma'lumotlar
                 </h4>
                 <div>
@@ -413,7 +413,7 @@ export default function DarsJadvali() {
                       });
                     }}
                     placeholder={`Masalan: 1-kurs aniq fanlar dars jadvali (${activeTab})`}
-                    className="w-full px-4 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#0d89b1] outline-none text-sm"
+                    className="w-full px-4 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#0a3674] outline-none text-sm"
                     required={activeTab === "uz"}
                   />
                 </div>
@@ -429,7 +429,7 @@ export default function DarsJadvali() {
                     type="file"
                     accept=".pdf,.doc,.docx,.xls,.xlsx"
                     onChange={(e) => setFormData({ ...formData, file: e.target.files?.[0] || null })}
-                    className="w-full text-xs md:text-sm text-gray-500 file:mr-4 file:py-2.5 file:px-4 file:rounded-lg file:border-0 file:text-xs md:file:text-sm file:font-bold file:bg-[#0d89b1]/10 file:text-[#0d89b1] hover:file:bg-[#0d89b1]/20 cursor-pointer"
+                    className="w-full text-xs md:text-sm text-gray-500 file:mr-4 file:py-2.5 file:px-4 file:rounded-lg file:border-0 file:text-xs md:file:text-sm file:font-bold file:bg-[#0a3674]/10 file:text-[#0a3674] hover:file:bg-[#0a3674]/20 cursor-pointer"
                     required={!editingItem}
                   />
                   {editingItem && editingItem.file && (
@@ -456,7 +456,7 @@ export default function DarsJadvali() {
                       id="is_active_cb"
                       checked={formData.is_active}
                       onChange={(e) => setFormData({ ...formData, is_active: e.target.checked })}
-                      className="w-5 h-5 rounded text-[#0d89b1] focus:ring-[#0d89b1]"
+                      className="w-5 h-5 rounded text-[#0a3674] focus:ring-[#0a3674]"
                     />
                     <label htmlFor="is_active_cb" className="text-sm font-bold text-gray-700 dark:text-gray-300 cursor-pointer">
                       Saytda ko'rsatish (Faol)
@@ -467,13 +467,13 @@ export default function DarsJadvali() {
 
               {isSubmitting && (
                 <div className="space-y-2 pt-2">
-                  <div className="flex justify-between text-xs font-bold text-[#0d89b1]">
+                  <div className="flex justify-between text-xs font-bold text-[#0a3674]">
                     <span>Yuklanmoqda...</span>
                     <span>{uploadProgress}%</span>
                   </div>
                   <div className="w-full bg-gray-100 dark:bg-gray-800 rounded-full h-2 overflow-hidden">
                     <div
-                      className="h-full bg-[#0d89b1] rounded-full transition-all duration-300"
+                      className="h-full bg-[#0a3674] rounded-full transition-all duration-300"
                       style={{ width: `${uploadProgress}%` }}
                     />
                   </div>
@@ -492,7 +492,7 @@ export default function DarsJadvali() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="flex items-center gap-2 px-8 py-2.5 bg-[#0d89b1] text-white font-bold rounded-lg hover:bg-[#0a6d8f] transition-all shadow-xl shadow-[#0d89b1]/20 active:scale-[0.98] disabled:opacity-50 text-sm"
+                  className="flex items-center gap-2 px-8 py-2.5 bg-[#0a3674] text-white font-bold rounded-lg hover:bg-[#0a6d8f] transition-all shadow-xl shadow-[#0a3674]/20 active:scale-[0.98] disabled:opacity-50 text-sm"
                 >
                   {isSubmitting ? <Loader2 className="w-5 h-5 animate-spin" /> : <Save className="w-5 h-5" />}
                   Saqlash

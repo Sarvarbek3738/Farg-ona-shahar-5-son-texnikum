@@ -63,11 +63,11 @@ export default function Login({ onLogin }: LoginProps) {
     <div className="min-h-screen relative overflow-hidden bg-[#0a192f] flex items-center justify-center p-4 transition-colors">
       <SEO 
         title="Kirish" 
-        description="5-sonli politexnika texnikumi boshqaruv paneliga kirish." 
+        description="Farg'ona shahar 5-son texnikumi boshqaruv paneliga kirish." 
       />
       {/* Abstract Background Shapes */}
-      <div className="absolute top-[-10%] -left-[10%] w-[40%] h-[40%] bg-[#0d89b1]/20 rounded-full blur-[120px] animate-pulse" />
-      <div className="absolute bottom-[-10%] -right-[10%] w-[40%] h-[40%] bg-[#0d89b1]/10 rounded-full blur-[120px] animate-pulse delay-700" />
+      <div className="absolute top-[-10%] -left-[10%] w-[40%] h-[40%] bg-[#0a3674]/20 rounded-full blur-[120px] animate-pulse" />
+      <div className="absolute bottom-[-10%] -right-[10%] w-[40%] h-[40%] bg-[#0a3674]/10 rounded-full blur-[120px] animate-pulse delay-700" />
       
       <div className="w-full max-w-md relative z-10">
         {/* Logo and Title */}
@@ -76,7 +76,7 @@ export default function Login({ onLogin }: LoginProps) {
             <div className="w-24 h-24 bg-white/10 backdrop-blur-md rounded-3xl shadow-2xl flex items-center justify-center p-5 border border-white/20 transition-all hover:scale-105 duration-300">
               <ImageWithFallback
                 src="/logoicon.png"
-                alt="5-son Politexnika Texnikumi Logo"
+                alt="5-son Texnikumi Logo"
                 className="w-full h-full"
                 objectFit="contain"
               />
@@ -106,13 +106,13 @@ export default function Login({ onLogin }: LoginProps) {
               </label>
               <div className="relative group">
                 <div className="absolute left-4 top-1/2 -translate-y-1/2 transition-colors duration-300">
-                  <User className="w-5 h-5 text-white/40 group-focus-within:text-[#0d89b1]" />
+                  <User className="w-5 h-5 text-white/40 group-focus-within:text-[#0a3674]" />
                 </div>
                 <input
                   type="text"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
-                  className="w-full pl-12 pr-4 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-[#0d89b1] focus:ring-4 focus:ring-[#0d89b1]/10 transition-all text-white placeholder-white/20"
+                  className="w-full pl-12 pr-4 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-[#0a3674] focus:ring-4 focus:ring-[#0a3674]/10 transition-all text-white placeholder-white/20"
                   placeholder="Loginni kiriting"
                   required
                 />
@@ -126,13 +126,13 @@ export default function Login({ onLogin }: LoginProps) {
               </label>
               <div className="relative group">
                 <div className="absolute left-4 top-1/2 -translate-y-1/2 transition-colors duration-300">
-                  <Lock className="w-5 h-5 text-white/40 group-focus-within:text-[#0d89b1]" />
+                  <Lock className="w-5 h-5 text-white/40 group-focus-within:text-[#0a3674]" />
                 </div>
                 <input
                   type={showPassword ? "text" : "password"}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full pl-12 pr-14 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-[#0d89b1] focus:ring-4 focus:ring-[#0d89b1]/10 transition-all text-white placeholder-white/20"
+                  className="w-full pl-12 pr-14 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-[#0a3674] focus:ring-4 focus:ring-[#0a3674]/10 transition-all text-white placeholder-white/20"
                   placeholder="Parolni kiriting"
                   required
                 />
@@ -154,7 +154,7 @@ export default function Login({ onLogin }: LoginProps) {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full flex items-center justify-center gap-3 px-4 py-4 bg-[#0d89b1] hover:bg-[#0a6d8f] text-white rounded-2xl transition-all duration-300 disabled:opacity-50 font-bold text-lg shadow-[0_10px_20px_rgba(13,137,177,0.3)] active:scale-[0.98] mt-8"
+              className="w-full flex items-center justify-center gap-3 px-4 py-4 bg-[#0a3674] hover:bg-[#0a6d8f] text-white rounded-2xl transition-all duration-300 disabled:opacity-50 font-bold text-lg shadow-[0_10px_20px_rgba(13,137,177,0.3)] active:scale-[0.98] mt-8"
             >
               {isLoading ? (
                 <>
@@ -173,7 +173,7 @@ export default function Login({ onLogin }: LoginProps) {
 
         {/* Footer */}
         <p className="text-center text-white/30 text-sm mt-10 font-medium">
-          © 2026 5-sonli Politexnika Texnikumi. Barcha huquqlar himoyalangan.
+          © 2026 Farg'ona shahar 5-son texnikumi. Barcha huquqlar himoyalangan.
         </p>
       </div>
     </div>

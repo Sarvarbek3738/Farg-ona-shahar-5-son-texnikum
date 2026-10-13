@@ -262,7 +262,7 @@ export default function Videolar() {
     <div className="p-4 md:p-6 space-y-6 max-w-7xl mx-auto overflow-x-hidden">
       <SEO 
         title="Videolar" 
-        description="5-sonli Politexnika Texnikumi videolavhalari." 
+        description="Farg'ona shahar 5-son texnikumi videolavhalari." 
       />
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div>
@@ -273,7 +273,7 @@ export default function Videolar() {
         </div>
         <button
           onClick={handleAdd}
-          className="flex items-center gap-2 px-6 py-2.5 bg-[#0d89b1] text-white font-bold rounded-lg hover:bg-[#0a6d8f] transition-all shadow-md active:scale-95"
+          className="flex items-center gap-2 px-6 py-2.5 bg-[#0a3674] text-white font-bold rounded-lg hover:bg-[#0a6d8f] transition-all shadow-md active:scale-95"
         >
           <Plus className="w-5 h-5" />
           Yangi video
@@ -287,7 +287,7 @@ export default function Videolar() {
           placeholder="Videolarni qidirish..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-full pl-10 pr-4 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg outline-none focus:ring-2 focus:ring-[#0d89b1]/20 focus:border-[#0d89b1] transition-all"
+          className="w-full pl-10 pr-4 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg outline-none focus:ring-2 focus:ring-[#0a3674]/20 focus:border-[#0a3674] transition-all"
         />
       </div>
 
@@ -319,7 +319,7 @@ export default function Videolar() {
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
                   <button
                     onClick={() => setPlayingVideo(video.video_file)}
-                    className="p-4 bg-white/20 backdrop-blur-md text-white rounded-full hover:bg-[#0d89b1] transition-all transform scale-90 group-hover:scale-100"
+                    className="p-4 bg-white/20 backdrop-blur-md text-white rounded-full hover:bg-[#0a3674] transition-all transform scale-90 group-hover:scale-100"
                   >
                     <Play className="w-8 h-8 fill-current" />
                   </button>
@@ -328,7 +328,7 @@ export default function Videolar() {
                 <div className="absolute top-2 right-2 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
                   <button
                     onClick={() => handleEdit(video)}
-                    className="p-2 bg-white/90 dark:bg-gray-800/90 text-[#0d89b1] rounded-lg hover:bg-white transition-colors shadow-lg"
+                    className="p-2 bg-white/90 dark:bg-gray-800/90 text-[#0a3674] rounded-lg hover:bg-white transition-colors shadow-lg"
                   >
                     <Edit className="w-4 h-4" />
                   </button>
@@ -405,7 +405,7 @@ export default function Videolar() {
                   onClick={() => setActiveTab(lang.id)}
                   className={`px-4 py-1.5 text-xs font-bold rounded-md transition-all ${
                     activeTab === lang.id
-                      ? "bg-white dark:bg-gray-700 text-[#0d89b1] shadow-sm"
+                      ? "bg-white dark:bg-gray-700 text-[#0a3674] shadow-sm"
                       : "text-gray-500 hover:text-gray-700 dark:text-gray-400"
                   }`}
                 >
@@ -426,7 +426,7 @@ export default function Videolar() {
                     onChange={(e) => {
                       setFormData({ ...formData, [`title_${activeTab}`]: e.target.value });
                     }}
-                    className="w-full px-4 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg outline-none focus:ring-2 focus:ring-[#0d89b1]/20 focus:border-[#0d89b1]"
+                    className="w-full px-4 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg outline-none focus:ring-2 focus:ring-[#0a3674]/20 focus:border-[#0a3674]"
                     placeholder={`Video nomi (${activeTab.toUpperCase()})`}
                     required={activeTab === "uz"}
                   />
@@ -441,7 +441,7 @@ export default function Videolar() {
                       setFormData({ ...formData, [`description_${activeTab}`]: e.target.value });
                     }}
                     rows={4}
-                    className="w-full px-4 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg outline-none focus:ring-2 focus:ring-[#0d89b1]/20 focus:border-[#0d89b1] resize-none"
+                    className="w-full px-4 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg outline-none focus:ring-2 focus:ring-[#0a3674]/20 focus:border-[#0a3674] resize-none"
                     placeholder={`Video tavsifi (${activeTab.toUpperCase()})`}
                   />
                 </div>
@@ -452,7 +452,7 @@ export default function Videolar() {
                     id="is_active_video"
                     checked={formData.is_active}
                     onChange={(e) => setFormData({ ...formData, is_active: e.target.checked })}
-                    className="w-5 h-5 rounded text-[#0d89b1] focus:ring-[#0d89b1]"
+                    className="w-5 h-5 rounded text-[#0a3674] focus:ring-[#0a3674]"
                   />
                   <label htmlFor="is_active_video" className="text-sm font-bold text-gray-700 dark:text-gray-300 cursor-pointer">
                     Faol holatda (Saytda ko'rinadi)
@@ -483,13 +483,13 @@ export default function Videolar() {
 
             {isSubmitting && uploadProgress !== null && (
               <div className="space-y-2">
-                <div className="flex justify-between text-xs font-bold text-[#0d89b1]">
+                <div className="flex justify-between text-xs font-bold text-[#0a3674]">
                   <span>Video yuklanmoqda...</span>
                   <span>{uploadProgress}%</span>
                 </div>
                 <div className="w-full bg-gray-100 dark:bg-gray-800 rounded-full h-2 overflow-hidden border border-gray-200 dark:border-gray-700">
                   <motion.div
-                    className="h-full bg-[#0d89b1] rounded-full"
+                    className="h-full bg-[#0a3674] rounded-full"
                     initial={{ width: 0 }}
                     animate={{ width: `${uploadProgress}%` }}
                     transition={{ duration: 0.3 }}
@@ -509,7 +509,7 @@ export default function Videolar() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="flex items-center gap-2 px-10 py-2 bg-[#0d89b1] text-white font-bold rounded-lg hover:bg-[#0a6d8f] transition-all disabled:opacity-50"
+                className="flex items-center gap-2 px-10 py-2 bg-[#0a3674] text-white font-bold rounded-lg hover:bg-[#0a6d8f] transition-all disabled:opacity-50"
               >
                 {isSubmitting ? <Loader2 className="w-5 h-5 animate-spin" /> : <Save className="w-5 h-5" />}
                 {editingVideo ? "Saqlash" : "Yuklash"}

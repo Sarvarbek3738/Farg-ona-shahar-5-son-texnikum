@@ -1,7 +1,7 @@
 
-# 5-sonli Politexnika Texnikumi - Admin Panel
+# Farg'ona shahar 5-son texnikumi - Admin Panel
 
-Farg'ona viloyati 5-sonli politexnika texnikumi boshqaruv paneli (Admin panel).
+Farg'ona viloyati Farg'ona shahar 5-son texnikumi boshqaruv paneli (Admin panel).
 
 ## Ishga tushirish
 

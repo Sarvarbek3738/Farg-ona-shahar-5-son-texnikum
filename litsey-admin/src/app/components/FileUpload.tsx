@@ -156,8 +156,8 @@ export function FileUpload({
       onDragLeave={handleDragLeave}
       className={`border-2 border-dashed rounded-xl p-8 text-center cursor-pointer transition-all duration-200 ${
         isDragging
-          ? "border-[#0d89b1] bg-[#0d89b1]/5 dark:bg-[#0d89b1]/10"
-          : "border-gray-200 dark:border-gray-700 hover:border-[#0d89b1] dark:hover:border-[#0d89b1] bg-[#f8fafc] dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800"
+          ? "border-[#0a3674] bg-[#0a3674]/5 dark:bg-[#0a3674]/10"
+          : "border-gray-200 dark:border-gray-700 hover:border-[#0a3674] dark:hover:border-[#0a3674] bg-[#f8fafc] dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800"
       } ${isUploading ? "pointer-events-none opacity-70" : ""}`}
     >
       <input
@@ -173,7 +173,7 @@ export function FileUpload({
           {isVideo ? (
             <FileVideo className="w-6 h-6 text-purple-500" />
           ) : (
-            <Upload className="w-6 h-6 text-[#0d89b1]" />
+            <Upload className="w-6 h-6 text-[#0a3674]" />
           )}
         </div>
         <div>
@@ -194,7 +194,7 @@ export function FileUpload({
         <span className="text-[#64748b] dark:text-gray-400">
           {uploadProgress < 100 ? "Yuklanmoqda..." : "Tugallandi"}
         </span>
-        <span className="font-bold text-[#0d89b1]">{uploadProgress}%</span>
+        <span className="font-bold text-[#0a3674]">{uploadProgress}%</span>
       </div>
       <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
         <div
@@ -203,7 +203,7 @@ export function FileUpload({
             width: `${uploadProgress}%`,
             background: uploadProgress === 100
               ? "linear-gradient(90deg, #10b981, #059669)"
-              : "linear-gradient(90deg, #0d89b1, #0a6d8f)",
+              : "linear-gradient(90deg, #0a3674, #0a6d8f)",
           }}
         />
       </div>
@@ -222,16 +222,16 @@ export function FileUpload({
       )}
 
       {isUploading && (
-        <div className="p-6 bg-[#0d89b1]/5 dark:bg-[#0d89b1]/10 border border-[#0d89b1]/20 rounded-xl space-y-3">
+        <div className="p-6 bg-[#0a3674]/5 dark:bg-[#0a3674]/10 border border-[#0a3674]/20 rounded-xl space-y-3">
           <div className="flex items-center gap-3">
             {isVideo ? (
               <FileVideo className="w-8 h-8 text-purple-500 animate-pulse" />
             ) : (
-              <Upload className="w-8 h-8 text-[#0d89b1] animate-pulse" />
+              <Upload className="w-8 h-8 text-[#0a3674] animate-pulse" />
             )}
             <div>
-              <p className="text-sm font-bold text-[#0d89b1]">Fayl yuklanmoqda...</p>
-              <p className="text-xs text-[#0d89b1]/70">
+              <p className="text-sm font-bold text-[#0a3674]">Fayl yuklanmoqda...</p>
+              <p className="text-xs text-[#0a3674]/70">
                 {isVideo ? "Video tayyorlanmoqda, kuting" : "Rasm yuklanmoqda, kuting"}
               </p>
             </div>

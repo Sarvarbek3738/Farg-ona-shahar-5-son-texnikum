@@ -202,7 +202,7 @@ export default function Xabarlar() {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Ism, email yoki telefon bo'yicha qidirish..."
-            className="w-full pl-10 pr-4 py-2 border border-gray-200 dark:border-gray-700 rounded-lg bg-gray-50 dark:bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-[#0d89b1]"
+            className="w-full pl-10 pr-4 py-2 border border-gray-200 dark:border-gray-700 rounded-lg bg-gray-50 dark:bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-[#0a3674]"
           />
         </div>
         <div className="flex items-center gap-2">
@@ -210,7 +210,7 @@ export default function Xabarlar() {
           <select
             value={statusFilter}
             onChange={(e) => setStatusFilter(e.target.value)}
-            className="px-3 py-2 border border-gray-200 dark:border-gray-700 rounded-lg bg-gray-50 dark:bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-[#0d89b1]"
+            className="px-3 py-2 border border-gray-200 dark:border-gray-700 rounded-lg bg-gray-50 dark:bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-[#0a3674]"
           >
             <option value="all">Barcha holatlar</option>
             <option value="new">Yangi</option>
@@ -237,7 +237,7 @@ export default function Xabarlar() {
                 onClick={() => handleOpenDetail(msg)}
                 className={`p-4 rounded-xl border cursor-pointer transition-all ${
                   selectedMessage?.id === msg.id
-                    ? "border-[#0d89b1] bg-[#0d89b1]/5 dark:bg-[#0d89b1]/10"
+                    ? "border-[#0a3674] bg-[#0a3674]/5 dark:bg-[#0a3674]/10"
                     : "border-gray-100 dark:border-gray-800 bg-white dark:bg-[#1f2937] hover:border-gray-300"
                 }`}
               >
@@ -267,9 +267,9 @@ export default function Xabarlar() {
                 <div>
                   <h3 className="text-lg font-bold text-gray-900 dark:text-white">{selectedMessage.full_name}</h3>
                   <div className="flex flex-wrap gap-3 text-xs text-gray-500 mt-1">
-                    <span>Email: <a href={`mailto:${selectedMessage.email}`} className="text-[#0d89b1] hover:underline">{selectedMessage.email}</a></span>
+                    <span>Email: <a href={`mailto:${selectedMessage.email}`} className="text-[#0a3674] hover:underline">{selectedMessage.email}</a></span>
                     <span>•</span>
-                    <span>Tel: <a href={`tel:${selectedMessage.phone}`} className="text-[#0d89b1] hover:underline">{selectedMessage.phone}</a></span>
+                    <span>Tel: <a href={`tel:${selectedMessage.phone}`} className="text-[#0a3674] hover:underline">{selectedMessage.phone}</a></span>
                   </div>
                 </div>
                 <div className="flex items-center gap-2">
@@ -320,13 +320,13 @@ export default function Xabarlar() {
                   onChange={(e) => setReplyText(e.target.value)}
                   placeholder="Xabarga javob yozing..."
                   rows={4}
-                  className="w-full p-4 border border-gray-200 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800 text-sm focus:ring-2 focus:ring-[#0d89b1] outline-none resize-none"
+                  className="w-full p-4 border border-gray-200 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800 text-sm focus:ring-2 focus:ring-[#0a3674] outline-none resize-none"
                 />
                 <div className="flex justify-end">
                   <button
                     onClick={handleSendReply}
                     disabled={isReplying || !replyText.trim()}
-                    className="flex items-center gap-2 px-6 py-2.5 bg-[#0d89b1] text-white font-bold rounded-lg hover:bg-[#0a6d8f] transition-all disabled:opacity-50 text-sm shadow-md shadow-[#0d89b1]/20"
+                    className="flex items-center gap-2 px-6 py-2.5 bg-[#0a3674] text-white font-bold rounded-lg hover:bg-[#0a6d8f] transition-all disabled:opacity-50 text-sm shadow-md shadow-[#0a3674]/20"
                   >
                     <Send className="w-4 h-4" />
                     {isReplying ? "Saqlanmoqda..." : "Javobni saqlash"}

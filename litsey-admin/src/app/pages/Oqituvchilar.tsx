@@ -284,8 +284,8 @@ export default function Oqituvchilar() {
     >
       <SEO 
         title="O'qituvchilar" 
-        description="5-sonli Politexnika Texnikumi professor-o'qituvchilari haqida ma'lumot." 
-        keywords="O'qituvchilar, Ustozlar, Texnikum, Politexnika"
+        description="Farg'ona shahar 5-son texnikumi professor-o'qituvchilari haqida ma'lumot." 
+        keywords="O'qituvchilar, Ustozlar, Texnikum, texnikum"
       />
       {/* Header */}
       <div className="flex items-center justify-between">
@@ -295,7 +295,7 @@ export default function Oqituvchilar() {
         </div>
         <button
           onClick={handleAdd}
-          className="flex items-center gap-2 px-4 py-2 bg-[#0d89b1] text-white rounded-lg hover:bg-[#0a6d8f] transition-colors"
+          className="flex items-center gap-2 px-4 py-2 bg-[#0a3674] text-white rounded-lg hover:bg-[#0a6d8f] transition-colors"
         >
           <Plus className="w-5 h-5" />
           Yangi o'qituvchi qo'shish
@@ -312,7 +312,7 @@ export default function Oqituvchilar() {
               placeholder="O'qituvchi qidirish..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 bg-[#f8fafc] dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-lg text-sm focus:outline-none focus:border-[#0d89b1] dark:text-gray-100 dark:placeholder-gray-500"
+              className="w-full pl-10 pr-4 py-2 bg-[#f8fafc] dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-lg text-sm focus:outline-none focus:border-[#0a3674] dark:text-gray-100 dark:placeholder-gray-500"
             />
           </div>
           <div className="flex items-center gap-1 bg-[#f8fafc] dark:bg-gray-800/50 rounded-lg p-1">
@@ -320,7 +320,7 @@ export default function Oqituvchilar() {
               onClick={() => setViewMode("table")}
               className={`p-2 rounded ${
                 viewMode === "table"
-                  ? "bg-white dark:bg-gray-700 text-[#0d89b1] shadow-sm"
+                  ? "bg-white dark:bg-gray-700 text-[#0a3674] shadow-sm"
                   : "text-[#64748b] dark:text-gray-400"
               } transition-all`}
             >
@@ -330,7 +330,7 @@ export default function Oqituvchilar() {
               onClick={() => setViewMode("grid")}
               className={`p-2 rounded ${
                 viewMode === "grid"
-                  ? "bg-white dark:bg-gray-700 text-[#0d89b1] shadow-sm"
+                  ? "bg-white dark:bg-gray-700 text-[#0a3674] shadow-sm"
                   : "text-[#64748b] dark:text-gray-400"
               } transition-all`}
             >
@@ -343,7 +343,7 @@ export default function Oqituvchilar() {
       {/* Teachers Display */}
       {loading ? (
         <div className="flex justify-center py-10">
-          <Loader2 className="w-8 h-8 text-[#0d89b1] animate-spin" />
+          <Loader2 className="w-8 h-8 text-[#0a3674] animate-spin" />
         </div>
       ) : viewMode === "table" ? (
         <div className="bg-white dark:bg-[#1f2937] rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden transition-colors">
@@ -409,7 +409,7 @@ export default function Oqituvchilar() {
                       <div className="flex items-center gap-2">
                         <button
                           onClick={() => handleEdit(teacher)}
-                          className="p-2 text-[#0d89b1] hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded transition-colors"
+                          className="p-2 text-[#0a3674] hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded transition-colors"
                         >
                           <Edit className="w-4 h-4" />
                         </button>
@@ -487,7 +487,7 @@ export default function Oqituvchilar() {
                 <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700 flex items-center gap-2">
                   <button
                     onClick={() => handleEdit(teacher)}
-                    className="flex-1 flex items-center justify-center gap-2 px-3 py-2 text-[#0d89b1] bg-blue-50 dark:bg-blue-900/20 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-900/40 transition-colors"
+                    className="flex-1 flex items-center justify-center gap-2 px-3 py-2 text-[#0a3674] bg-blue-50 dark:bg-blue-900/20 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-900/40 transition-colors"
                   >
                     <Edit className="w-4 h-4" />
                     Tahrirlash
@@ -538,7 +538,7 @@ export default function Oqituvchilar() {
                         onClick={() => setActiveTab(lang.id as "uz" | "ru")}
                         className={`px-4 py-2 text-xs font-bold rounded-lg transition-all ${
                           activeTab === lang.id
-                            ? "bg-white dark:bg-gray-700 text-[#0d89b1] shadow-sm"
+                            ? "bg-white dark:bg-gray-700 text-[#0a3674] shadow-sm"
                             : "text-gray-500 hover:text-gray-700 dark:text-gray-400"
                         }`}
                       >
@@ -576,7 +576,7 @@ export default function Oqituvchilar() {
                             type="text"
                             value={formData.full_name}
                             onChange={(e) => setFormData({ ...formData, full_name: e.target.value })}
-                            className="w-full px-5 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-4 focus:ring-[#0d89b1]/10 focus:border-[#0d89b1] outline-none transition-all dark:text-gray-100"
+                            className="w-full px-5 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-4 focus:ring-[#0a3674]/10 focus:border-[#0a3674] outline-none transition-all dark:text-gray-100"
                             required
                             placeholder="Masalan: Eshmatov Toshmat"
                           />
@@ -595,7 +595,7 @@ export default function Oqituvchilar() {
                                   setFormData({ ...formData, experience_years: val === "" ? 0 : Number(val) });
                                 }
                               }}
-                              className="w-full px-5 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-4 focus:ring-[#0d89b1]/10 focus:border-[#0d89b1] outline-none transition-all dark:text-gray-100"
+                              className="w-full px-5 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-4 focus:ring-[#0a3674]/10 focus:border-[#0a3674] outline-none transition-all dark:text-gray-100"
                               placeholder="Masalan: 5"
                             />
                           </div>
@@ -607,7 +607,7 @@ export default function Oqituvchilar() {
                           <select
                             value={formData.department}
                             onChange={(e) => setFormData({ ...formData, department: e.target.value })}
-                            className="w-full px-5 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-4 focus:ring-[#0d89b1]/10 focus:border-[#0d89b1] outline-none transition-all dark:text-gray-100"
+                            className="w-full px-5 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-4 focus:ring-[#0a3674]/10 focus:border-[#0a3674] outline-none transition-all dark:text-gray-100"
                           >
                             <option value="">Kafedrani tanlang</option>
                             {departments.map((dept) => (
@@ -635,7 +635,7 @@ export default function Oqituvchilar() {
                             value={formData.phone}
                             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                             placeholder="+998 90 123 45 67"
-                            className="w-full px-5 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-4 focus:ring-[#0d89b1]/10 focus:border-[#0d89b1] outline-none transition-all dark:text-gray-100"
+                            className="w-full px-5 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-4 focus:ring-[#0a3674]/10 focus:border-[#0a3674] outline-none transition-all dark:text-gray-100"
                           />
                         </div>
                         <div>
@@ -647,7 +647,7 @@ export default function Oqituvchilar() {
                             value={formData.email}
                             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                             placeholder="misol@mail.com"
-                            className="w-full px-5 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-4 focus:ring-[#0d89b1]/10 focus:border-[#0d89b1] outline-none transition-all dark:text-gray-100"
+                            className="w-full px-5 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-4 focus:ring-[#0a3674]/10 focus:border-[#0a3674] outline-none transition-all dark:text-gray-100"
                           />
                         </div>
                       </div>
@@ -657,8 +657,8 @@ export default function Oqituvchilar() {
                   {/* Right Column: Academic and Translations */}
                   <div className="space-y-8">
                     <div className="p-6 bg-gray-50 dark:bg-gray-800/50 rounded-2xl border border-gray-100 dark:border-gray-700 space-y-6">
-                      <h3 className="text-xs font-bold text-[#0d89b1] uppercase tracking-widest flex items-center gap-2">
-                        <span className="w-4 h-[1px] bg-[#0d89b1]" />
+                      <h3 className="text-xs font-bold text-[#0a3674] uppercase tracking-widest flex items-center gap-2">
+                        <span className="w-4 h-[1px] bg-[#0a3674]" />
                         {languages.find(l => l.id === activeTab)?.label} tilidagi ma'lumotlar
                       </h3>
                       
@@ -674,7 +674,7 @@ export default function Oqituvchilar() {
                               const field = `position_${activeTab}` as keyof typeof formData;
                               setFormData({ ...formData, [field]: e.target.value });
                             }}
-                            className="w-full px-5 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-4 focus:ring-[#0d89b1]/10 focus:border-[#0d89b1] outline-none transition-all dark:text-gray-100"
+                            className="w-full px-5 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-4 focus:ring-[#0a3674]/10 focus:border-[#0a3674] outline-none transition-all dark:text-gray-100"
                             required={activeTab === "uz"}
                             placeholder="Masalan: Matematika o'qituvchisi"
                           />
@@ -690,7 +690,7 @@ export default function Oqituvchilar() {
                               const field = `subject_${activeTab}` as keyof typeof formData;
                               setFormData({ ...formData, [field]: e.target.value });
                             }}
-                            className="w-full px-5 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-4 focus:ring-[#0d89b1]/10 focus:border-[#0d89b1] outline-none transition-all dark:text-gray-100"
+                            className="w-full px-5 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-4 focus:ring-[#0a3674]/10 focus:border-[#0a3674] outline-none transition-all dark:text-gray-100"
                             placeholder="Masalan: Matematika"
                           />
                         </div>
@@ -705,7 +705,7 @@ export default function Oqituvchilar() {
                               setFormData({ ...formData, [field]: e.target.value });
                             }}
                             rows={4}
-                            className="w-full px-5 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-4 focus:ring-[#0d89b1]/10 focus:border-[#0d89b1] outline-none transition-all dark:text-gray-100 resize-none"
+                            className="w-full px-5 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-4 focus:ring-[#0a3674]/10 focus:border-[#0a3674] outline-none transition-all dark:text-gray-100 resize-none"
                             placeholder="O'qituvchi haqida qisqacha ma'lumot..."
                           />
                         </div>
@@ -720,7 +720,7 @@ export default function Oqituvchilar() {
                               setFormData({ ...formData, [field]: e.target.value });
                             }}
                             rows={3}
-                            className="w-full px-5 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-4 focus:ring-[#0d89b1]/10 focus:border-[#0d89b1] outline-none transition-all dark:text-gray-100 resize-none"
+                            className="w-full px-5 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-4 focus:ring-[#0a3674]/10 focus:border-[#0a3674] outline-none transition-all dark:text-gray-100 resize-none"
                             placeholder="O'qituvchining yutuqlari..."
                           />
                         </div>
@@ -733,7 +733,7 @@ export default function Oqituvchilar() {
                         id="is_active_teacher"
                         checked={formData.is_active}
                         onChange={(e) => setFormData({ ...formData, is_active: e.target.checked })}
-                        className="w-5 h-5 rounded-md text-[#0d89b1] focus:ring-[#0d89b1]"
+                        className="w-5 h-5 rounded-md text-[#0a3674] focus:ring-[#0a3674]"
                       />
                       <label htmlFor="is_active_teacher" className="text-sm font-bold text-gray-700 dark:text-gray-300 cursor-pointer">
                         Faol holatda (saytda ko'rinadi)
@@ -753,7 +753,7 @@ export default function Oqituvchilar() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="flex items-center gap-2 px-12 py-3 bg-[#0d89b1] text-white font-bold rounded-xl hover:bg-[#0a6d8f] transition-all shadow-xl shadow-[#0d89b1]/20 active:scale-[0.98] disabled:opacity-50"
+                    className="flex items-center gap-2 px-12 py-3 bg-[#0a3674] text-white font-bold rounded-xl hover:bg-[#0a6d8f] transition-all shadow-xl shadow-[#0a3674]/20 active:scale-[0.98] disabled:opacity-50"
                   >
                     {isSubmitting && <Loader2 className="w-5 h-5 animate-spin" />}
                     {editingTeacher ? "Saqlash" : "Qo'shish"}

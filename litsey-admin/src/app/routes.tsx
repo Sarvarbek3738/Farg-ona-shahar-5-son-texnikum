@@ -32,7 +32,7 @@ function RouteErrorBoundary() {
         </p>
         <button
           onClick={() => window.location.reload()}
-          className="w-full py-4 bg-[#0d89b1] text-white rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-[#0b7396] transition-all shadow-lg"
+          className="w-full py-4 bg-[#0a3674] text-white rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-[#0b7396] transition-all shadow-lg"
         >
           Sahifani yangilash
         </button>

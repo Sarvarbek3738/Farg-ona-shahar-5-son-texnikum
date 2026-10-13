@@ -1,5 +1,5 @@
 @echo off
-title 5-sonli Politexnika Texnikumi - Backend
+title Farg'ona shahar 5-son texnikumi - Backend
 cd /d "%~dp0akademiklitsey-backend"
 echo [INFO] Backend ishga tushirilmoqda: http://localhost:8000
 echo [INFO] Swagger API hujjatlari: http://localhost:8000/

@@ -16,10 +16,10 @@ interface StatItem {
 
 export default function Dashboard() {
   const [stats, setStats] = useState<StatItem[]>([
-    { label: "O'qituvchilar", value: "...", icon: UserCog, color: "#0d89b1", path: "/oqituvchilar" },
-    { label: "Yangiliklar", value: "...", icon: Newspaper, color: "#0d89b1", path: "/yangiliklar" },
-    { label: "E'lonlar", value: "...", icon: Bell, color: "#0d89b1", path: "/elonlar" },
-    { label: "Rahbariyat", value: "...", icon: ShieldCheck, color: "#0d89b1", path: "/rahbariyat" },
+    { label: "O'qituvchilar", value: "...", icon: UserCog, color: "#0a3674", path: "/oqituvchilar" },
+    { label: "Yangiliklar", value: "...", icon: Newspaper, color: "#0a3674", path: "/yangiliklar" },
+    { label: "E'lonlar", value: "...", icon: Bell, color: "#0a3674", path: "/elonlar" },
+    { label: "Rahbariyat", value: "...", icon: ShieldCheck, color: "#0a3674", path: "/rahbariyat" },
   ]);
 
   const [recentNews, setRecentNews] = useState<any[]>([]);
@@ -67,10 +67,10 @@ export default function Dashboard() {
       };
 
       setStats([
-        { label: "O'qituvchilar", value: getCount(teachersData), icon: UserCog, color: "#0d89b1", path: "/oqituvchilar" },
-        { label: "Yangiliklar", value: getCount(newsData), icon: Newspaper, color: "#0d89b1", path: "/yangiliklar" },
-        { label: "E'lonlar", value: getCount(announcementsData), icon: Bell, color: "#0d89b1", path: "/elonlar" },
-        { label: "Rahbariyat", value: getCount(managementData), icon: ShieldCheck, color: "#0d89b1", path: "/rahbariyat" },
+        { label: "O'qituvchilar", value: getCount(teachersData), icon: UserCog, color: "#0a3674", path: "/oqituvchilar" },
+        { label: "Yangiliklar", value: getCount(newsData), icon: Newspaper, color: "#0a3674", path: "/yangiliklar" },
+        { label: "E'lonlar", value: getCount(announcementsData), icon: Bell, color: "#0a3674", path: "/elonlar" },
+        { label: "Rahbariyat", value: getCount(managementData), icon: ShieldCheck, color: "#0a3674", path: "/rahbariyat" },
       ]);
 
       setRecentNews(getRecent(newsData));
@@ -95,7 +95,7 @@ export default function Dashboard() {
     >
       <SEO 
         title="Dashboard" 
-        description="5-sonli Politexnika Texnikumi boshqaruv paneli asosiy sahifasi. Statistika va so'nggi ma'lumotlar." 
+        description="Farg'ona shahar 5-son texnikumi boshqaruv paneli asosiy sahifasi. Statistika va so'nggi ma'lumotlar." 
       />
       {/* Header */}
       <div className="flex items-center justify-between">
@@ -107,7 +107,7 @@ export default function Dashboard() {
         </div>
         <button 
           onClick={fetchDashboardData}
-          className="p-2 text-[#0d89b1] hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg transition-colors"
+          className="p-2 text-[#0a3674] hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg transition-colors"
         >
           {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : <Eye className="w-5 h-5" />}
         </button>
@@ -145,19 +145,19 @@ export default function Dashboard() {
           Tezkor harakatlar
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          <Link to="/yangiliklar" className="flex items-center gap-3 px-4 py-3 bg-[#0d89b1] text-white rounded-lg hover:bg-[#0a6d8f] transition-colors shadow-sm">
+          <Link to="/yangiliklar" className="flex items-center gap-3 px-4 py-3 bg-[#0a3674] text-white rounded-lg hover:bg-[#0a6d8f] transition-colors shadow-sm">
             <Plus className="w-5 h-5" />
             <span className="text-sm font-medium">Yangilik qo'shish</span>
           </Link>
-          <Link to="/elonlar" className="flex items-center gap-3 px-4 py-3 bg-[#0d89b1] text-white rounded-lg hover:bg-[#0a6d8f] transition-colors shadow-sm">
+          <Link to="/elonlar" className="flex items-center gap-3 px-4 py-3 bg-[#0a3674] text-white rounded-lg hover:bg-[#0a6d8f] transition-colors shadow-sm">
             <Plus className="w-5 h-5" />
             <span className="text-sm font-medium">E'lon qo'shish</span>
           </Link>
-          <Link to="/oqituvchilar" className="flex items-center gap-3 px-4 py-3 bg-[#0d89b1] text-white rounded-lg hover:bg-[#0a6d8f] transition-colors shadow-sm">
+          <Link to="/oqituvchilar" className="flex items-center gap-3 px-4 py-3 bg-[#0a3674] text-white rounded-lg hover:bg-[#0a6d8f] transition-colors shadow-sm">
             <Plus className="w-5 h-5" />
             <span className="text-sm font-medium">O'qituvchi qo'shish</span>
           </Link>
-          <Link to="/rahbariyat" className="flex items-center gap-3 px-4 py-3 bg-[#0d89b1] text-white rounded-lg hover:bg-[#0a6d8f] transition-colors shadow-sm">
+          <Link to="/rahbariyat" className="flex items-center gap-3 px-4 py-3 bg-[#0a3674] text-white rounded-lg hover:bg-[#0a6d8f] transition-colors shadow-sm">
             <Plus className="w-5 h-5" />
             <span className="text-sm font-medium">Rahbar qo'shish</span>
           </Link>

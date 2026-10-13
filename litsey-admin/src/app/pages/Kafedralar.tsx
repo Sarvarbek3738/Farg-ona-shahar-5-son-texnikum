@@ -233,7 +233,7 @@ export default function Kafedralar() {
         </div>
         <button
           onClick={handleAdd}
-          className="flex items-center gap-2 px-6 py-3 bg-[#0d89b1] text-white font-bold rounded-xl hover:bg-[#0a6d8f] transition-all shadow-lg shadow-[#0d89b1]/20 active:scale-[0.98]"
+          className="flex items-center gap-2 px-6 py-3 bg-[#0a3674] text-white font-bold rounded-xl hover:bg-[#0a6d8f] transition-all shadow-lg shadow-[#0a3674]/20 active:scale-[0.98]"
         >
           <Plus className="w-5 h-5" />
           Yangi kafedra
@@ -242,13 +242,13 @@ export default function Kafedralar() {
 
       {/* Search */}
       <div className="relative group max-w-md">
-        <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 group-focus-within:text-[#0d89b1] transition-colors" />
+        <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 group-focus-within:text-[#0a3674] transition-colors" />
         <input
           type="text"
           placeholder="Kafedra nomini qidirish..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-full pl-12 pr-4 py-3 bg-white dark:bg-[#1f2937] border border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-4 focus:ring-[#0d89b1]/10 focus:border-[#0d89b1] outline-none transition-all shadow-sm"
+          className="w-full pl-12 pr-4 py-3 bg-white dark:bg-[#1f2937] border border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-4 focus:ring-[#0a3674]/10 focus:border-[#0a3674] outline-none transition-all shadow-sm"
         />
       </div>
 
@@ -257,7 +257,7 @@ export default function Kafedralar() {
         {filteredDepartments.map((dept) => (
           <div
             key={dept.id}
-            className="group bg-white dark:bg-[#1f2937] border border-gray-200 dark:border-gray-700 rounded-3xl p-6 shadow-sm hover:shadow-xl hover:border-[#0d89b1]/30 transition-all relative overflow-hidden"
+            className="group bg-white dark:bg-[#1f2937] border border-gray-200 dark:border-gray-700 rounded-3xl p-6 shadow-sm hover:shadow-xl hover:border-[#0a3674]/30 transition-all relative overflow-hidden"
           >
             <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
               <button
@@ -290,7 +290,7 @@ export default function Kafedralar() {
             </div>
 
             <div className="flex items-center gap-4 mb-6">
-              <div className="p-4 bg-[#0d89b1]/10 text-[#0d89b1] rounded-2xl">
+              <div className="p-4 bg-[#0a3674]/10 text-[#0a3674] rounded-2xl">
                 <Users className="w-8 h-8" />
               </div>
               <div className="min-w-0">
@@ -306,17 +306,17 @@ export default function Kafedralar() {
 
             <div className="space-y-4 mb-6">
               <div className="flex items-start gap-3 text-sm text-gray-500 dark:text-gray-400">
-                <Users className="w-4 h-4 mt-0.5 shrink-0 text-[#0d89b1]" />
+                <Users className="w-4 h-4 mt-0.5 shrink-0 text-[#0a3674]" />
                 <span className="font-medium">
                   Mudiri: {(dept.head_teacher && typeof dept.head_teacher === 'object') ? dept.head_teacher.full_name : 'Tayinlanmagan'}
                 </span>
               </div>
               <div className="flex items-start gap-3 text-sm text-gray-500 dark:text-gray-400">
-                <MapPin className="w-4 h-4 mt-0.5 shrink-0 text-[#0d89b1]" />
+                <MapPin className="w-4 h-4 mt-0.5 shrink-0 text-[#0a3674]" />
                 <span className="font-medium">Xona: {dept.room_number || 'Kiritilmagan'}</span>
               </div>
               <div className="flex items-start gap-3 text-sm text-gray-500 dark:text-gray-400">
-                <Phone className="w-4 h-4 mt-0.5 shrink-0 text-[#0d89b1]" />
+                <Phone className="w-4 h-4 mt-0.5 shrink-0 text-[#0a3674]" />
                 <span className="font-medium">{dept.phone || 'Telefon yo\'q'}</span>
               </div>
             </div>
@@ -362,7 +362,7 @@ export default function Kafedralar() {
                       onClick={() => setActiveTab(lang.id as "uz" | "ru")}
                       className={`px-4 py-2 text-xs font-bold rounded-lg transition-all ${
                         activeTab === lang.id
-                          ? "bg-white dark:bg-gray-700 text-[#0d89b1] shadow-sm"
+                          ? "bg-white dark:bg-gray-700 text-[#0a3674] shadow-sm"
                           : "text-gray-500 hover:text-gray-700 dark:text-gray-400"
                       }`}
                     >
@@ -382,8 +382,8 @@ export default function Kafedralar() {
             <form onSubmit={handleSubmit} className="p-10 space-y-10">
               {/* Language Specific Fields */}
               <div className="p-8 bg-gray-50 dark:bg-gray-800/50 rounded-2xl border border-gray-100 dark:border-gray-700 space-y-6">
-                <h4 className="text-xs font-bold text-[#0d89b1] uppercase tracking-widest flex items-center gap-2">
-                  <span className="w-4 h-[1px] bg-[#0d89b1]" />
+                <h4 className="text-xs font-bold text-[#0a3674] uppercase tracking-widest flex items-center gap-2">
+                  <span className="w-4 h-[1px] bg-[#0a3674]" />
                   {languages.find(l => l.id === activeTab)?.label} tilidagi ma'lumotlar
                 </h4>
                 
@@ -401,7 +401,7 @@ export default function Kafedralar() {
                         const field = `name_${activeTab}` as keyof typeof formData;
                         setFormData({ ...formData, [field]: e.target.value });
                       }}
-                      className="w-full px-5 py-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-4 focus:ring-[#0d89b1]/10 focus:border-[#0d89b1] outline-none transition-all"
+                      className="w-full px-5 py-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-4 focus:ring-[#0a3674]/10 focus:border-[#0a3674] outline-none transition-all"
                       required={activeTab === "uz"}
                       placeholder={`${activeTab.toUpperCase()} tilida nomini kiriting...`}
                     />
@@ -419,7 +419,7 @@ export default function Kafedralar() {
                         setFormData({ ...formData, [field]: e.target.value });
                       }}
                       rows={3}
-                      className="w-full px-5 py-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-4 focus:ring-[#0d89b1]/10 focus:border-[#0d89b1] outline-none transition-all resize-none"
+                      className="w-full px-5 py-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-4 focus:ring-[#0a3674]/10 focus:border-[#0a3674] outline-none transition-all resize-none"
                       placeholder={`${activeTab.toUpperCase()} tilida tavsif kiriting...`}
                     />
                   </div>
@@ -440,7 +440,7 @@ export default function Kafedralar() {
                       <select
                         value={formData.head_teacher}
                         onChange={(e) => setFormData({ ...formData, head_teacher: e.target.value })}
-                        className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-4 focus:ring-[#0d89b1]/10 focus:border-[#0d89b1] outline-none transition-all"
+                        className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-4 focus:ring-[#0a3674]/10 focus:border-[#0a3674] outline-none transition-all"
                       >
                         <option value="">Tanlang...</option>
                         {teachers.map((t) => (
@@ -456,7 +456,7 @@ export default function Kafedralar() {
                           type="text"
                           value={formData.room_number}
                           onChange={(e) => setFormData({ ...formData, room_number: e.target.value })}
-                          className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-4 focus:ring-[#0d89b1]/10 focus:border-[#0d89b1] outline-none transition-all"
+                          className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-4 focus:ring-[#0a3674]/10 focus:border-[#0a3674] outline-none transition-all"
                           placeholder="Masalan: 201"
                         />
                       </div>
@@ -468,7 +468,7 @@ export default function Kafedralar() {
                         id="is_active_dept"
                         checked={formData.is_active}
                         onChange={(e) => setFormData({ ...formData, is_active: e.target.checked })}
-                        className="w-5 h-5 rounded-md text-[#0d89b1] focus:ring-[#0d89b1]"
+                        className="w-5 h-5 rounded-md text-[#0a3674] focus:ring-[#0a3674]"
                       />
                       <label htmlFor="is_active_dept" className="text-sm font-bold text-gray-700 dark:text-gray-300 cursor-pointer">
                         Faol holatda (saytda ko'rinadi)
@@ -490,7 +490,7 @@ export default function Kafedralar() {
                         type="text"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-4 focus:ring-[#0d89b1]/10 focus:border-[#0d89b1] outline-none transition-all"
+                        className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-4 focus:ring-[#0a3674]/10 focus:border-[#0a3674] outline-none transition-all"
                         placeholder="+998 90 123 45 67"
                       />
                     </div>
@@ -500,7 +500,7 @@ export default function Kafedralar() {
                         type="email"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-4 focus:ring-[#0d89b1]/10 focus:border-[#0d89b1] outline-none transition-all"
+                        className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-4 focus:ring-[#0a3674]/10 focus:border-[#0a3674] outline-none transition-all"
                         placeholder="kafedra@example.com"
                       />
                     </div>
@@ -512,22 +512,22 @@ export default function Kafedralar() {
                           value={subjectInput}
                           onChange={(e) => setSubjectInput(e.target.value)}
                           onKeyPress={(e) => e.key === 'Enter' && (e.preventDefault(), handleAddSubject())}
-                          className="flex-1 px-5 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-4 focus:ring-[#0d89b1]/10 outline-none"
+                          className="flex-1 px-5 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-4 focus:ring-[#0a3674]/10 outline-none"
                           placeholder="Fan nomi..."
                         />
                         <button
                           type="button"
                           onClick={handleAddSubject}
-                          className="px-4 bg-[#0d89b1] text-white rounded-xl hover:bg-[#0a6d8f] transition-colors"
+                          className="px-4 bg-[#0a3674] text-white rounded-xl hover:bg-[#0a6d8f] transition-colors"
                         >
                           <Plus className="w-5 h-5" />
                         </button>
                       </div>
                       <div className="flex flex-wrap gap-2">
                         {formData.subjects.map((sub, i) => (
-                          <span key={i} className="flex items-center gap-1 px-3 py-1.5 bg-[#0d89b1]/10 text-[#0d89b1] text-xs font-bold rounded-lg border border-[#0d89b1]/20">
+                          <span key={i} className="flex items-center gap-1 px-3 py-1.5 bg-[#0a3674]/10 text-[#0a3674] text-xs font-bold rounded-lg border border-[#0a3674]/20">
                             {sub}
-                            <button onClick={() => removeSubject(i)} className="p-0.5 hover:bg-[#0d89b1]/20 rounded-md">
+                            <button onClick={() => removeSubject(i)} className="p-0.5 hover:bg-[#0a3674]/20 rounded-md">
                               <X className="w-3 h-3" />
                             </button>
                           </span>
@@ -549,7 +549,7 @@ export default function Kafedralar() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="flex items-center gap-2 px-12 py-4 bg-[#0d89b1] text-white font-bold rounded-2xl hover:bg-[#0a6d8f] transition-all shadow-xl shadow-[#0d89b1]/20 active:scale-[0.98] disabled:opacity-50"
+                  className="flex items-center gap-2 px-12 py-4 bg-[#0a3674] text-white font-bold rounded-2xl hover:bg-[#0a6d8f] transition-all shadow-xl shadow-[#0a3674]/20 active:scale-[0.98] disabled:opacity-50"
                 >
                   {isSubmitting ? <Loader2 className="w-5 h-5 animate-spin" /> : <Save className="w-5 h-5" />}
                   Saqlash

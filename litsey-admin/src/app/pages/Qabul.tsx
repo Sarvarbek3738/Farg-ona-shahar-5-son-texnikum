@@ -414,7 +414,7 @@ export default function Qabul() {
       <div className="flex flex-col sm:flex-row md:items-center justify-between gap-4 bg-white dark:bg-[#1f2937] p-5 md:p-6 rounded-lg shadow-sm border border-gray-100 dark:border-gray-800">
         <div>
           <h1 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white flex items-center gap-3">
-            <Settings2 className="w-6 h-6 md:w-8 md:h-8 text-[#0d89b1]" />
+            <Settings2 className="w-6 h-6 md:w-8 md:h-8 text-[#0a3674]" />
             Qabul boshqaruvi
           </h1>
           <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
@@ -429,7 +429,7 @@ export default function Qabul() {
           )}
           <button
             onClick={fetchData}
-            className="px-4 py-2 text-sm font-medium text-gray-600 hover:text-[#0d89b1] transition-colors"
+            className="px-4 py-2 text-sm font-medium text-gray-600 hover:text-[#0a3674] transition-colors"
           >
             Ma'lumotlarni yangilash
           </button>
@@ -441,7 +441,7 @@ export default function Qabul() {
         <div className="lg:col-span-7 space-y-6 md:space-y-8">
           <section className="bg-white dark:bg-[#1f2937] p-5 md:p-8 rounded-lg shadow-sm border border-gray-100 dark:border-gray-800">
             <h2 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-6 md:mb-8 flex items-center gap-2">
-              <CheckCircle2 className="w-5 h-5 md:w-6 md:h-6 text-[#0d89b1]" />
+              <CheckCircle2 className="w-5 h-5 md:w-6 md:h-6 text-[#0a3674]" />
               Joriy qabul sozlamalari
             </h2>
 
@@ -453,7 +453,7 @@ export default function Qabul() {
                     type="text"
                     value={formData.academic_year || ""}
                     onChange={(e) => setFormData({ ...formData, academic_year: e.target.value })}
-                    className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#0d89b1]/20 outline-none transition-all text-sm"
+                    className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#0a3674]/20 outline-none transition-all text-sm"
                     placeholder="Masalan: 2024-2025"
                     required
                   />
@@ -464,7 +464,7 @@ export default function Qabul() {
                     type="text"
                     value={formData.contract_price || ""}
                     onChange={(e) => setFormData({ ...formData, contract_price: e.target.value })}
-                    className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#0d89b1]/20 outline-none transition-all text-sm"
+                    className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#0a3674]/20 outline-none transition-all text-sm"
                     placeholder="Masalan: 12 000 000 UZS"
                     required
                   />
@@ -483,7 +483,7 @@ export default function Qabul() {
                         setFormData({ ...formData, total_quota: val === "" ? 0 : Number(val) });
                       }
                     }}
-                    className="w-full px-3 md:px-4 py-2 md:py-2.5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md focus:ring-2 focus:ring-[#0d89b1]/20 outline-none text-sm"
+                    className="w-full px-3 md:px-4 py-2 md:py-2.5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md focus:ring-2 focus:ring-[#0a3674]/20 outline-none text-sm"
                   />
                 </div>
                 <div className="space-y-2">
@@ -523,7 +523,7 @@ export default function Qabul() {
                     type="date"
                     value={formData.application_start}
                     onChange={(e) => setFormData({ ...formData, application_start: e.target.value })}
-                    className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#0d89b1]/20 outline-none text-sm"
+                    className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#0a3674]/20 outline-none text-sm"
                     required
                   />
                 </div>
@@ -533,7 +533,7 @@ export default function Qabul() {
                     type="date"
                     value={formData.application_end}
                     onChange={(e) => setFormData({ ...formData, application_end: e.target.value })}
-                    className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#0d89b1]/20 outline-none text-sm"
+                    className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#0a3674]/20 outline-none text-sm"
                     required
                   />
                 </div>
@@ -546,7 +546,7 @@ export default function Qabul() {
                     type="date"
                     value={formData.exam_date}
                     onChange={(e) => setFormData({ ...formData, exam_date: e.target.value })}
-                    className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#0d89b1]/20 outline-none text-sm"
+                    className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#0a3674]/20 outline-none text-sm"
                     required
                   />
                 </div>
@@ -556,7 +556,7 @@ export default function Qabul() {
                     type="date"
                     value={formData.results_date}
                     onChange={(e) => setFormData({ ...formData, results_date: e.target.value })}
-                    className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#0d89b1]/20 outline-none text-sm"
+                    className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#0a3674]/20 outline-none text-sm"
                     required
                   />
                 </div>
@@ -568,7 +568,7 @@ export default function Qabul() {
                   type="url"
                   value={formData.online_apply_url}
                   onChange={(e) => setFormData({ ...formData, online_apply_url: e.target.value })}
-                  className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#0d89b1]/20 outline-none transition-all text-sm"
+                  className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#0a3674]/20 outline-none transition-all text-sm"
                   placeholder="https://example.uz/apply"
                 />
               </div>
@@ -579,7 +579,7 @@ export default function Qabul() {
                   id="is_active"
                   checked={formData.is_active}
                   onChange={(e) => setFormData({ ...formData, is_active: e.target.checked })}
-                  className="w-5 h-5 rounded text-[#0d89b1] focus:ring-[#0d89b1]"
+                  className="w-5 h-5 rounded text-[#0a3674] focus:ring-[#0a3674]"
                 />
                 <label htmlFor="is_active" className="text-sm font-bold text-gray-700 dark:text-gray-300 cursor-pointer">
                   Qabulni faollashtirish (Saytda ko'rinadi)
@@ -589,7 +589,7 @@ export default function Qabul() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full py-3.5 md:py-4 bg-[#0d89b1] text-white font-bold rounded-lg hover:bg-[#0a6d8f] transition-all shadow-lg shadow-[#0d89b1]/20 flex items-center justify-center gap-2 text-sm md:text-base"
+                className="w-full py-3.5 md:py-4 bg-[#0a3674] text-white font-bold rounded-lg hover:bg-[#0a6d8f] transition-all shadow-lg shadow-[#0a3674]/20 flex items-center justify-center gap-2 text-sm md:text-base"
               >
                 {isSubmitting ? <Loader2 className="w-5 h-5 animate-spin" /> : <Save className="w-5 h-5" />}
                 Qabul ma'lumotlarini saqlash
@@ -601,12 +601,12 @@ export default function Qabul() {
           <section className="bg-white dark:bg-[#1f2937] p-5 md:p-8 rounded-lg shadow-sm border border-gray-100 dark:border-gray-800">
             <div className="flex items-center justify-between mb-6 md:mb-8 pb-4 border-b border-gray-50 dark:border-gray-800">
               <h2 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
-                <BookOpen className="w-5 h-5 md:w-6 md:h-6 text-[#0d89b1]" />
+                <BookOpen className="w-5 h-5 md:w-6 md:h-6 text-[#0a3674]" />
                 Imtihon fanlari
               </h2>
               <button
                 onClick={handleAddSub}
-                className="flex items-center gap-2 px-3 md:px-4 py-2 bg-[#0d89b1]/10 text-[#0d89b1] font-bold rounded-lg hover:bg-[#0d89b1]/20 transition-all text-xs md:text-sm"
+                className="flex items-center gap-2 px-3 md:px-4 py-2 bg-[#0a3674]/10 text-[#0a3674] font-bold rounded-lg hover:bg-[#0a3674]/20 transition-all text-xs md:text-sm"
               >
                 <Plus className="w-4 h-4" />
                 Fan qo'shish
@@ -615,9 +615,9 @@ export default function Qabul() {
 
             <div className="space-y-4">
               {subjects.map((sub) => (
-                <div key={sub.id} className="flex items-center justify-between p-4 md:p-5 bg-gray-50 dark:bg-gray-800/50 rounded-lg border border-gray-100 dark:border-gray-700 hover:border-[#0d89b1]/30 transition-all group">
+                <div key={sub.id} className="flex items-center justify-between p-4 md:p-5 bg-gray-50 dark:bg-gray-800/50 rounded-lg border border-gray-100 dark:border-gray-700 hover:border-[#0a3674]/30 transition-all group">
                   <div className="flex items-center gap-4">
-                    <div className="w-8 h-8 md:w-10 md:h-10 bg-white dark:bg-gray-800 rounded-lg flex items-center justify-center text-[#0d89b1] font-bold border border-gray-100 dark:border-gray-700 shadow-sm text-sm md:text-base">
+                    <div className="w-8 h-8 md:w-10 md:h-10 bg-white dark:bg-gray-800 rounded-lg flex items-center justify-center text-[#0a3674] font-bold border border-gray-100 dark:border-gray-700 shadow-sm text-sm md:text-base">
                       {sub.sort_order}
                     </div>
                     <div>
@@ -651,12 +651,12 @@ export default function Qabul() {
           <section className="bg-white dark:bg-[#1f2937] p-5 md:p-8 rounded-lg shadow-sm border border-gray-100 dark:border-gray-800 sticky top-6">
             <div className="flex items-center justify-between mb-6 md:mb-8 pb-4 border-b border-gray-50 dark:border-gray-800">
               <h2 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
-                <FileText className="w-5 h-5 md:w-6 md:h-6 text-[#0d89b1]" />
+                <FileText className="w-5 h-5 md:w-6 md:h-6 text-[#0a3674]" />
                 Kerakli hujjatlar
               </h2>
               <button
                 onClick={handleAddDoc}
-                className="flex items-center gap-2 px-3 md:px-4 py-2 bg-[#0d89b1]/10 text-[#0d89b1] font-bold rounded-lg hover:bg-[#0d89b1]/20 transition-all text-xs md:text-sm"
+                className="flex items-center gap-2 px-3 md:px-4 py-2 bg-[#0a3674]/10 text-[#0a3674] font-bold rounded-lg hover:bg-[#0a3674]/20 transition-all text-xs md:text-sm"
               >
                 <Plus className="w-4 h-4" />
                 Hujjat qo'shish
@@ -665,7 +665,7 @@ export default function Qabul() {
 
             <div className="space-y-4">
               {documents.map((doc) => (
-                <div key={doc.id} className="p-4 md:p-5 bg-gray-50 dark:bg-gray-800/50 rounded-lg border border-gray-100 dark:border-gray-700 hover:border-[#0d89b1]/30 transition-all group">
+                <div key={doc.id} className="p-4 md:p-5 bg-gray-50 dark:bg-gray-800/50 rounded-lg border border-gray-100 dark:border-gray-700 hover:border-[#0a3674]/30 transition-all group">
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex items-center gap-3">
                       {doc.is_required ? (
@@ -717,7 +717,7 @@ export default function Qabul() {
                       onClick={() => setActiveTab(lang.id)}
                       className={`px-3 md:px-4 py-1 md:py-1.5 text-xs font-bold rounded-md transition-all ${
                         activeTab === lang.id 
-                          ? "bg-white dark:bg-gray-700 text-[#0d89b1] shadow-sm" 
+                          ? "bg-white dark:bg-gray-700 text-[#0a3674] shadow-sm" 
                           : "text-gray-500 hover:text-gray-700 dark:text-gray-400"
                       }`}
                     >
@@ -739,8 +739,8 @@ export default function Qabul() {
                 {/* Single language section that switches */}
                 <div className="space-y-6">
                   <div className="p-5 md:p-6 bg-gray-50 dark:bg-gray-800/50 rounded-lg border border-gray-100 dark:border-gray-700">
-                    <h4 className="text-xs font-bold text-[#0d89b1] uppercase tracking-widest flex items-center gap-2 mb-6">
-                      <span className="w-4 h-[1px] bg-[#0d89b1]" />
+                    <h4 className="text-xs font-bold text-[#0a3674] uppercase tracking-widest flex items-center gap-2 mb-6">
+                      <span className="w-4 h-[1px] bg-[#0a3674]" />
                       {languages.find(l => l.id === activeTab)?.label} tilidagi ma'lumotlar
                     </h4>
                     
@@ -759,7 +759,7 @@ export default function Qabul() {
                             const field = `document_name_${activeTab}` as keyof typeof docFormData;
                             setDocFormData({ ...docFormData, [field]: e.target.value });
                           }}
-                          className="w-full px-4 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#0d89b1]/20 outline-none transition-all text-sm"
+                          className="w-full px-4 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#0a3674]/20 outline-none transition-all text-sm"
                           required={activeTab === "uz"}
                         />
                       </div>
@@ -777,7 +777,7 @@ export default function Qabul() {
                             setDocFormData({ ...docFormData, [field]: e.target.value });
                           }}
                           rows={1}
-                          className="w-full px-4 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#0d89b1]/20 outline-none transition-all resize-none text-sm"
+                          className="w-full px-4 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#0a3674]/20 outline-none transition-all resize-none text-sm"
                         />
                       </div>
                     </div>
@@ -792,7 +792,7 @@ export default function Qabul() {
                     id="is_required"
                     checked={docFormData.is_required}
                     onChange={(e) => setDocFormData({ ...docFormData, is_required: e.target.checked })}
-                    className="w-5 h-5 rounded text-[#0d89b1] focus:ring-[#0d89b1]"
+                    className="w-5 h-5 rounded text-[#0a3674] focus:ring-[#0a3674]"
                   />
                   <label htmlFor="is_required" className="text-sm font-bold text-gray-700 dark:text-gray-300 cursor-pointer">Majburiy hujjat</label>
                 </div>
@@ -809,7 +809,7 @@ export default function Qabul() {
                 <button
                   type="submit"
                   disabled={isDocSubmitting}
-                  className="px-8 md:px-10 py-2.5 md:py-3 bg-[#0d89b1] text-white font-bold rounded-lg hover:bg-[#0a6d8f] transition-all shadow-lg shadow-[#0d89b1]/20 disabled:opacity-50 text-sm"
+                  className="px-8 md:px-10 py-2.5 md:py-3 bg-[#0a3674] text-white font-bold rounded-lg hover:bg-[#0a6d8f] transition-all shadow-lg shadow-[#0a3674]/20 disabled:opacity-50 text-sm"
                 >
                   {isDocSubmitting ? <Loader2 className="w-5 h-5 animate-spin" /> : "Hujjatni saqlash"}
                 </button>
@@ -837,7 +837,7 @@ export default function Qabul() {
                       onClick={() => setActiveTab(lang.id)}
                       className={`px-3 md:px-4 py-1 md:py-1.5 text-xs font-bold rounded-md transition-all ${
                         activeTab === lang.id 
-                          ? "bg-white dark:bg-gray-700 text-[#0d89b1] shadow-sm" 
+                          ? "bg-white dark:bg-gray-700 text-[#0a3674] shadow-sm" 
                           : "text-gray-500 hover:text-gray-700 dark:text-gray-400"
                       }`}
                     >
@@ -858,8 +858,8 @@ export default function Qabul() {
               <div className="grid grid-cols-1 gap-6 md:gap-8">
                 <div className="space-y-6">
                   <div className="p-5 md:p-6 bg-gray-50 dark:bg-gray-800/50 rounded-lg border border-gray-100 dark:border-gray-700">
-                    <h4 className="text-xs font-bold text-[#0d89b1] uppercase tracking-widest flex items-center gap-2 mb-6">
-                      <span className="w-4 h-[1px] bg-[#0d89b1]" />
+                    <h4 className="text-xs font-bold text-[#0a3674] uppercase tracking-widest flex items-center gap-2 mb-6">
+                      <span className="w-4 h-[1px] bg-[#0a3674]" />
                       {languages.find(l => l.id === activeTab)?.label} tilidagi ma'lumotlar
                     </h4>
                     
@@ -878,7 +878,7 @@ export default function Qabul() {
                             const field = `subject_name_${activeTab}` as keyof typeof subFormData;
                             setSubFormData({ ...subFormData, [field]: e.target.value });
                           }}
-                          className="w-full px-4 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#0d89b1]/20 outline-none transition-all text-sm"
+                          className="w-full px-4 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#0a3674]/20 outline-none transition-all text-sm"
                           required={activeTab === "uz"}
                         />
                       </div>
@@ -896,7 +896,7 @@ export default function Qabul() {
                             setSubFormData({ ...subFormData, [field]: e.target.value });
                           }}
                           rows={1}
-                          className="w-full px-4 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#0d89b1]/20 outline-none transition-all resize-none text-sm"
+                          className="w-full px-4 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#0a3674]/20 outline-none transition-all resize-none text-sm"
                         />
                       </div>
                     </div>
@@ -944,7 +944,7 @@ export default function Qabul() {
                 <button
                   type="submit"
                   disabled={isSubSubmitting}
-                  className="px-8 md:px-10 py-2.5 md:py-3 bg-[#0d89b1] text-white font-bold rounded-lg hover:bg-[#0a6d8f] transition-all shadow-lg shadow-[#0d89b1]/20 disabled:opacity-50 text-sm"
+                  className="px-8 md:px-10 py-2.5 md:py-3 bg-[#0a3674] text-white font-bold rounded-lg hover:bg-[#0a6d8f] transition-all shadow-lg shadow-[#0a3674]/20 disabled:opacity-50 text-sm"
                 >
                   {isSubSubmitting ? <Loader2 className="w-5 h-5 animate-spin" /> : "Fanni saqlash"}
                 </button>

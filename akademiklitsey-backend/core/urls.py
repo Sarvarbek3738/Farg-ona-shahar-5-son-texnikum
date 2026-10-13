@@ -9,9 +9,9 @@ from django.conf.urls.static import static
 
 schema_view = get_schema_view(
     openapi.Info(
-        title="5-son Politexnika Texnikumi API",
+        title="Farg'ona shahar 5-son texnikumi API",
         default_version='v1',
-        description="5-sonli politexnika texnikumi REST API hujjatlari",
+        description="Farg'ona shahar 5-son texnikumi REST API hujjatlari",
         terms_of_service="https://5texnikum.uz/terms/",
         contact=openapi.Contact(email="info@5texnikum.uz"),
         license=openapi.License(name="BSD License"),

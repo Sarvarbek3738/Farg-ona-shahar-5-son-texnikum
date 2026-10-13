@@ -259,7 +259,7 @@ export default function AlbomRasmlari() {
         <div className="space-y-6">
           <div className="p-6 bg-white dark:bg-[#1f2937] rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm space-y-5">
             <h3 className="text-sm font-bold text-[#1f2937] dark:text-gray-100 flex items-center gap-2">
-              <span className="w-1.5 h-5 rounded-full bg-[#0d89b1]" />
+              <span className="w-1.5 h-5 rounded-full bg-[#0a3674]" />
               Yangi rasm qo'shish
             </h3>
 
@@ -282,7 +282,7 @@ export default function AlbomRasmlari() {
                   type="text"
                   value={formData.caption}
                   onChange={(e) => setFormData({ ...formData, caption: e.target.value })}
-                  className="w-full px-4 py-2.5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl text-xs focus:ring-4 focus:ring-[#0d89b1]/10 focus:border-[#0d89b1] outline-none transition-all"
+                  className="w-full px-4 py-2.5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl text-xs focus:ring-4 focus:ring-[#0a3674]/10 focus:border-[#0a3674] outline-none transition-all"
                   placeholder="Barcha rasmlar uchun umumiy tavsif"
                 />
               </div>
@@ -290,7 +290,7 @@ export default function AlbomRasmlari() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-[#0d89b1] text-white text-sm font-bold rounded-xl hover:bg-[#0a6d8f] transition-all shadow-lg shadow-[#0d89b1]/20 active:scale-[0.98] disabled:opacity-50"
+                className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-[#0a3674] text-white text-sm font-bold rounded-xl hover:bg-[#0a6d8f] transition-all shadow-lg shadow-[#0a3674]/20 active:scale-[0.98] disabled:opacity-50"
               >
                 {isSubmitting ? <Loader2 className="w-4 h-4 animate-spin" /> : <Save className="w-4 h-4" />}
                 Saqlash

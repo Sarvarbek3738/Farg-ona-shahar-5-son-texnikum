@@ -231,9 +231,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'accounts.User'
 
 JAZZMIN_SETTINGS = {
-    "site_title": "5-son Politexnika Texnikumi",
-    "site_header": "5-son Politexnika Texnikumi",
-    "site_brand": "5-son PT Admin",
-    "welcome_sign": "5-sonli Politexnika Texnikumi boshqaruv paneliga xush kelibsiz",
+    "site_title": "Farg'ona shahar 5-son texnikumi",
+    "site_header": "Farg'ona shahar 5-son texnikumi",
+    "site_brand": "5-son Texnikumi",
+    "welcome_sign": "Farg'ona shahar 5-son texnikumi boshqaruv paneliga xush kelibsiz",
     "show_ui_builder": False,
 }

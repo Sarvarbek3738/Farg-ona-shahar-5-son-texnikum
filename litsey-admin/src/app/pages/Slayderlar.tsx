@@ -239,7 +239,7 @@ export default function Slayderlar() {
         </div>
         <button
           onClick={handleAdd}
-          className="flex items-center gap-2 px-5 py-2.5 bg-[#0d89b1] text-white font-bold rounded-lg hover:bg-[#0a6d8f] transition-all shadow-lg shadow-[#0d89b1]/20 active:scale-[0.98] w-full sm:w-auto justify-center text-sm md:text-base"
+          className="flex items-center gap-2 px-5 py-2.5 bg-[#0a3674] text-white font-bold rounded-lg hover:bg-[#0a6d8f] transition-all shadow-lg shadow-[#0a3674]/20 active:scale-[0.98] w-full sm:w-auto justify-center text-sm md:text-base"
         >
           <Plus className="w-5 h-5" />
           Yangi slayder
@@ -248,13 +248,13 @@ export default function Slayderlar() {
 
       {/* Search */}
       <div className="relative group max-w-md">
-        <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 group-focus-within:text-[#0d89b1] transition-colors" />
+        <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 group-focus-within:text-[#0a3674] transition-colors" />
         <input
           type="text"
           placeholder="Slayderlarni qidirish..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-full pl-12 pr-4 py-2.5 bg-white dark:bg-[#1f2937] border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-4 focus:ring-[#0d89b1]/10 focus:border-[#0d89b1] outline-none transition-all shadow-sm text-sm"
+          className="w-full pl-12 pr-4 py-2.5 bg-white dark:bg-[#1f2937] border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-4 focus:ring-[#0a3674]/10 focus:border-[#0a3674] outline-none transition-all shadow-sm text-sm"
         />
       </div>
 
@@ -363,7 +363,7 @@ export default function Slayderlar() {
                       onClick={() => setActiveTab(lang.id as "uz" | "ru")}
                       className={`px-3 md:px-4 py-1.5 md:py-2 text-xs font-bold rounded-md transition-all ${
                         activeTab === lang.id
-                          ? "bg-white dark:bg-gray-700 text-[#0d89b1] shadow-sm"
+                          ? "bg-white dark:bg-gray-700 text-[#0a3674] shadow-sm"
                           : "text-gray-500 hover:text-gray-700 dark:text-gray-400"
                       }`}
                     >
@@ -385,8 +385,8 @@ export default function Slayderlar() {
                 {/* Language Specific Fields */}
                 <div className="space-y-6 md:space-y-8">
                   <div className="p-6 md:p-8 bg-gray-50 dark:bg-gray-800/50 rounded-lg border border-gray-100 dark:border-gray-700 space-y-6">
-                    <h4 className="text-xs font-bold text-[#0d89b1] uppercase tracking-widest flex items-center gap-2">
-                      <span className="w-4 h-[1px] bg-[#0d89b1]" />
+                    <h4 className="text-xs font-bold text-[#0a3674] uppercase tracking-widest flex items-center gap-2">
+                      <span className="w-4 h-[1px] bg-[#0a3674]" />
                       {languages.find(l => l.id === activeTab)?.label} tilidagi ma'lumotlar
                     </h4>
                     
@@ -402,7 +402,7 @@ export default function Slayderlar() {
                             const field = `title_${activeTab}` as keyof typeof formData;
                             setFormData({ ...formData, [field]: e.target.value });
                           }}
-                          className="w-full px-4 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-4 focus:ring-[#0d89b1]/10 focus:border-[#0d89b1] outline-none transition-all text-sm"
+                          className="w-full px-4 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-4 focus:ring-[#0a3674]/10 focus:border-[#0a3674] outline-none transition-all text-sm"
                           required={activeTab === "uz"}
                           placeholder={`Sarlavha...`}
                         />
@@ -418,7 +418,7 @@ export default function Slayderlar() {
                             setFormData({ ...formData, [field]: e.target.value });
                           }}
                           rows={4}
-                          className="w-full px-4 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-4 focus:ring-[#0d89b1]/10 focus:border-[#0d89b1] outline-none transition-all resize-none text-sm"
+                          className="w-full px-4 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-4 focus:ring-[#0a3674]/10 focus:border-[#0a3674] outline-none transition-all resize-none text-sm"
                           placeholder={`Tavsif...`}
                         />
                       </div>
@@ -433,7 +433,7 @@ export default function Slayderlar() {
                           id="is_active_slider"
                           checked={formData.is_active}
                           onChange={(e) => setFormData({ ...formData, is_active: e.target.checked })}
-                          className="w-5 h-5 rounded text-[#0d89b1] focus:ring-[#0d89b1]"
+                          className="w-5 h-5 rounded text-[#0a3674] focus:ring-[#0a3674]"
                         />
                         <label htmlFor="is_active_slider" className="text-sm font-bold text-gray-700 dark:text-gray-300 cursor-pointer">
                           Faol holatda
@@ -467,8 +467,8 @@ export default function Slayderlar() {
                       uploadProgress={uploadProgress}
                     />
                   </div>
-                  <div className="p-5 md:p-6 bg-[#0d89b1]/5 dark:bg-[#0d89b1]/10 rounded-lg border border-[#0d89b1]/20">
-                    <p className="text-[10px] md:text-xs text-[#0d89b1] leading-relaxed font-medium">
+                  <div className="p-5 md:p-6 bg-[#0a3674]/5 dark:bg-[#0a3674]/10 rounded-lg border border-[#0a3674]/20">
+                    <p className="text-[10px] md:text-xs text-[#0a3674] leading-relaxed font-medium">
                       Hero slayder rasmiga matn yozmaslik tavsiya etiladi, chunki sarlavha va tavsif saytda rasm ustiga avtomatik qo'yiladi.
                     </p>
                   </div>
@@ -486,7 +486,7 @@ export default function Slayderlar() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="flex items-center gap-2 px-8 md:px-12 py-3 bg-[#0d89b1] text-white font-bold rounded-lg hover:bg-[#0a6d8f] transition-all shadow-xl shadow-[#0d89b1]/20 active:scale-[0.98] disabled:opacity-50 text-sm md:text-base"
+                  className="flex items-center gap-2 px-8 md:px-12 py-3 bg-[#0a3674] text-white font-bold rounded-lg hover:bg-[#0a6d8f] transition-all shadow-xl shadow-[#0a3674]/20 active:scale-[0.98] disabled:opacity-50 text-sm md:text-base"
                 >
                   {isSubmitting ? <Loader2 className="w-5 h-5 animate-spin" /> : <Save className="w-5 h-5" />}
                   Saqlash

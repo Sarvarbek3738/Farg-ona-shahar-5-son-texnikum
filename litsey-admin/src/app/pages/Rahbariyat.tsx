@@ -229,8 +229,8 @@ export default function Rahbariyat() {
     >
       <SEO 
         title="Rahbariyat" 
-        description="5-sonli Politexnika Texnikumi rahbariyati haqida ma'lumot." 
-        keywords="Rahbariyat, Direktor, Texnikum, Politexnika"
+        description="Farg'ona shahar 5-son texnikumi rahbariyati haqida ma'lumot." 
+        keywords="Rahbariyat, Direktor, Texnikum, texnikum"
       />
       {/* Header */}
       <div className="flex items-center justify-between">
@@ -240,7 +240,7 @@ export default function Rahbariyat() {
         </div>
         <button
           onClick={handleAdd}
-          className="flex items-center gap-2 px-4 py-2 bg-[#0d89b1] text-white rounded-lg hover:bg-[#0a6d8f] transition-colors"
+          className="flex items-center gap-2 px-4 py-2 bg-[#0a3674] text-white rounded-lg hover:bg-[#0a6d8f] transition-colors"
         >
           <Plus className="w-5 h-5" />
           Yangi rahbar qo'shish
@@ -260,12 +260,12 @@ export default function Rahbariyat() {
                   <ImageWithFallback
                     src={getImageUrl(leader.photo)}
                     alt={leader.full_name}
-                    className="w-32 h-32 rounded-full object-cover border-4 border-[#0d89b1]/10 dark:border-[#0d89b1]/20"
+                    className="w-32 h-32 rounded-full object-cover border-4 border-[#0a3674]/10 dark:border-[#0a3674]/20"
                   />
                   <h3 className="text-lg font-semibold text-[#1f2937] dark:text-gray-100 mt-4">
                     {leader.full_name}
                   </h3>
-                  <p className="text-sm text-[#0d89b1] font-medium mt-1">
+                  <p className="text-sm text-[#0a3674] font-medium mt-1">
                     {leader.translations?.uz?.position}
                   </p>
                 </div>
@@ -308,7 +308,7 @@ export default function Rahbariyat() {
               <div className="p-4 bg-gray-50 dark:bg-gray-800/50 border-t border-gray-100 dark:border-gray-700 flex gap-2">
                 <button
                   onClick={() => handleEdit(leader)}
-                  className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-[#0d89b1] text-white rounded-lg hover:bg-[#0a6d8f] transition-colors"
+                  className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-[#0a3674] text-white rounded-lg hover:bg-[#0a6d8f] transition-colors"
                 >
                   <Edit className="w-4 h-4" />
                   Tahrirlash
@@ -357,7 +357,7 @@ export default function Rahbariyat() {
                         onClick={() => setActiveTab(lang.id as "uz" | "ru")}
                         className={`px-4 py-2 text-xs font-bold rounded-lg transition-all ${
                           activeTab === lang.id
-                            ? "bg-white dark:bg-gray-700 text-[#0d89b1] shadow-sm"
+                            ? "bg-white dark:bg-gray-700 text-[#0a3674] shadow-sm"
                             : "text-gray-500 hover:text-gray-700 dark:text-gray-400"
                         }`}
                       >
@@ -395,7 +395,7 @@ export default function Rahbariyat() {
                             type="text"
                             value={formData.full_name}
                             onChange={(e) => setFormData({ ...formData, full_name: e.target.value })}
-                            className="w-full px-5 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-4 focus:ring-[#0d89b1]/10 focus:border-[#0d89b1] outline-none transition-all dark:text-gray-100"
+                            className="w-full px-5 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-4 focus:ring-[#0a3674]/10 focus:border-[#0a3674] outline-none transition-all dark:text-gray-100"
                             required
                             placeholder="F.I.Sh."
                           />
@@ -410,7 +410,7 @@ export default function Rahbariyat() {
                               value={formData.phone}
                               onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                               placeholder="+998 90 123 45 67"
-                              className="w-full px-5 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-4 focus:ring-[#0d89b1]/10 focus:border-[#0d89b1] outline-none transition-all dark:text-gray-100"
+                              className="w-full px-5 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-4 focus:ring-[#0a3674]/10 focus:border-[#0a3674] outline-none transition-all dark:text-gray-100"
                             />
                           </div>
                           <div>
@@ -422,7 +422,7 @@ export default function Rahbariyat() {
                               value={formData.email}
                               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                               placeholder="example@mail.com"
-                              className="w-full px-5 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-4 focus:ring-[#0d89b1]/10 focus:border-[#0d89b1] outline-none transition-all dark:text-gray-100"
+                              className="w-full px-5 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-4 focus:ring-[#0a3674]/10 focus:border-[#0a3674] outline-none transition-all dark:text-gray-100"
                             />
                           </div>
                         </div>
@@ -435,7 +435,7 @@ export default function Rahbariyat() {
                         <select
                           value={String(formData.is_active)}
                           onChange={(e) => setFormData({ ...formData, is_active: e.target.value === "true" })}
-                          className="px-3 py-1.5 text-sm bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#0d89b1]/20 outline-none dark:text-white"
+                          className="px-3 py-1.5 text-sm bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#0a3674]/20 outline-none dark:text-white"
                         >
                           <option value="true">Faol</option>
                           <option value="false">Nofaol</option>
@@ -447,8 +447,8 @@ export default function Rahbariyat() {
                   {/* Right Column: Translations */}
                   <div className="space-y-8">
                     <div className="p-6 bg-gray-50 dark:bg-gray-800/50 rounded-2xl border border-gray-100 dark:border-gray-700 space-y-6">
-                      <h3 className="text-xs font-bold text-[#0d89b1] uppercase tracking-widest flex items-center gap-2">
-                        <span className="w-4 h-[1px] bg-[#0d89b1]" />
+                      <h3 className="text-xs font-bold text-[#0a3674] uppercase tracking-widest flex items-center gap-2">
+                        <span className="w-4 h-[1px] bg-[#0a3674]" />
                         {languages.find(l => l.id === activeTab)?.label} tilidagi ma'lumotlar
                       </h3>
                       
@@ -464,7 +464,7 @@ export default function Rahbariyat() {
                               const field = `position_${activeTab}` as keyof typeof formData;
                               setFormData({ ...formData, [field]: e.target.value });
                             }}
-                            className="w-full px-5 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-4 focus:ring-[#0d89b1]/10 focus:border-[#0d89b1] outline-none transition-all dark:text-gray-100"
+                            className="w-full px-5 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-4 focus:ring-[#0a3674]/10 focus:border-[#0a3674] outline-none transition-all dark:text-gray-100"
                             required={activeTab === "uz"}
                             placeholder="Masalan: Direktor o'rinbosari"
                           />
@@ -480,7 +480,7 @@ export default function Rahbariyat() {
                               const field = `reception_hours_${activeTab}` as keyof typeof formData;
                               setFormData({ ...formData, [field]: e.target.value });
                             }}
-                            className="w-full px-5 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-4 focus:ring-[#0d89b1]/10 focus:border-[#0d89b1] outline-none transition-all dark:text-gray-100"
+                            className="w-full px-5 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-4 focus:ring-[#0a3674]/10 focus:border-[#0a3674] outline-none transition-all dark:text-gray-100"
                             placeholder="Masalan: Chorshanba, 10:00 - 12:00"
                           />
                         </div>
@@ -495,7 +495,7 @@ export default function Rahbariyat() {
                               setFormData({ ...formData, [field]: e.target.value });
                             }}
                             rows={6}
-                            className="w-full px-5 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-4 focus:ring-[#0d89b1]/10 focus:border-[#0d89b1] outline-none transition-all dark:text-gray-100 resize-none"
+                            className="w-full px-5 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-4 focus:ring-[#0a3674]/10 focus:border-[#0a3674] outline-none transition-all dark:text-gray-100 resize-none"
                             placeholder="Rahbar haqida ma'lumot..."
                           />
                         </div>
@@ -515,7 +515,7 @@ export default function Rahbariyat() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="flex items-center gap-2 px-12 py-3 bg-[#0d89b1] text-white font-bold rounded-xl hover:bg-[#0a6d8f] transition-all shadow-xl shadow-[#0d89b1]/20 active:scale-[0.98] disabled:opacity-50"
+                    className="flex items-center gap-2 px-12 py-3 bg-[#0a3674] text-white font-bold rounded-xl hover:bg-[#0a6d8f] transition-all shadow-xl shadow-[#0a3674]/20 active:scale-[0.98] disabled:opacity-50"
                   >
                     {isSubmitting && <Loader2 className="w-5 h-5 animate-spin" />}
                     {editingLeader ? "Saqlash" : "Qo'shish"}

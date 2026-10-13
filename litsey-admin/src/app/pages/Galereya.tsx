@@ -183,8 +183,8 @@ export default function Galereya() {
     <div className="p-4 md:p-6 space-y-6 max-w-7xl mx-auto">
       <SEO 
         title="Galereya" 
-        description="5-sonli Politexnika Texnikumi hayotidan yorqin lavhalar va fotogalereya." 
-        keywords="Galereya, Rasmlar, Texnikum, Politexnika"
+        description="Farg'ona shahar 5-son texnikumi hayotidan yorqin lavhalar va fotogalereya." 
+        keywords="Galereya, Rasmlar, Texnikum, texnikum"
       />
       {/* Header */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
@@ -198,7 +198,7 @@ export default function Galereya() {
         </div>
         <button
           onClick={() => setIsUploadModalOpen(true)}
-          className="flex items-center gap-2 px-6 py-2.5 bg-[#0d89b1] text-white font-bold rounded-lg hover:bg-[#0a6d8f] transition-all shadow-md active:scale-95"
+          className="flex items-center gap-2 px-6 py-2.5 bg-[#0a3674] text-white font-bold rounded-lg hover:bg-[#0a6d8f] transition-all shadow-md active:scale-95"
         >
           <Plus className="w-5 h-5" />
           Rasm qo'shish
@@ -213,7 +213,7 @@ export default function Galereya() {
           placeholder="Qidirish..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-full pl-10 pr-4 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg outline-none focus:ring-2 focus:ring-[#0d89b1]/20 focus:border-[#0d89b1] transition-all"
+          className="w-full pl-10 pr-4 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg outline-none focus:ring-2 focus:ring-[#0a3674]/20 focus:border-[#0a3674] transition-all"
         />
       </div>
 
@@ -313,13 +313,13 @@ export default function Galereya() {
 
               {isSubmitting && (
                 <div className="space-y-2">
-                  <div className="flex justify-between text-xs font-bold text-[#0d89b1]">
+                  <div className="flex justify-between text-xs font-bold text-[#0a3674]">
                     <span>Yuklanmoqda...</span>
                     <span>{uploadProgress}%</span>
                   </div>
                   <div className="w-full bg-gray-100 dark:bg-gray-800 rounded-full h-2 overflow-hidden border border-gray-200 dark:border-gray-700">
                     <motion.div
-                      className="h-full bg-[#0d89b1] rounded-full"
+                      className="h-full bg-[#0a3674] rounded-full"
                       initial={{ width: 0 }}
                       animate={{ width: `${uploadProgress}%` }}
                       transition={{ duration: 0.3 }}
@@ -338,7 +338,7 @@ export default function Galereya() {
                   onChange={(e) =>
                     setFormData({ ...formData, event_date: e.target.value })
                   }
-                  className="w-full px-4 py-2 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg outline-none focus:ring-2 focus:ring-[#0d89b1]/20 focus:border-[#0d89b1]"
+                  className="w-full px-4 py-2 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg outline-none focus:ring-2 focus:ring-[#0a3674]/20 focus:border-[#0a3674]"
                 />
               </div>
 
@@ -353,7 +353,7 @@ export default function Galereya() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="flex items-center gap-2 px-8 py-2 bg-[#0d89b1] text-white font-bold rounded-lg hover:bg-[#0a6d8f] disabled:opacity-50"
+                  className="flex items-center gap-2 px-8 py-2 bg-[#0a3674] text-white font-bold rounded-lg hover:bg-[#0a6d8f] disabled:opacity-50"
                 >
                   {isSubmitting ? (
                     <Loader2 className="w-4 h-4 animate-spin" />
