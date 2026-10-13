@@ -1,0 +1,13 @@
+{
+  "name": "texnikum-system",
+  "version": "1.0.0",
+  "private": true,
+  "description": "5-sonli Politexnika Texnikumi veb platformasi (Backend, Frontend, Admin)",
+  "scripts": {
+    "start:backend": "cd akademiklitsey-backend && .\\venv\\Scripts\\python.exe manage.py runserver 8000",
+    "start:frontend": "npm --prefix litsey run dev",
+    "start:admin": "npm --prefix litsey-admin run dev",
+    "build:frontend": "npm --prefix litsey run build",
+    "build:admin": "npm --prefix litsey-admin run build"
+  }
+}

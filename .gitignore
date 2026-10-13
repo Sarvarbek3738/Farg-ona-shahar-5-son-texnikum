@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Python Virtual Environment & Cache
+venv/
+**/venv/
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+
+# Build outputs
+dist/
+**/dist/
+build/
+**/build/
+
+# SQLite Database (optional - if you want fresh db, keep ignored, or comment out if you want to include seed db)
+# db.sqlite3
+
+# Environment files with sensitive credentials
+.env.local
+*.env.local
+
+# Media uploads (optional - large uploaded files)
+# **/media/
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+npm-debug.log*
+yarn-debug.log*
