@@ -75,17 +75,19 @@ export function Sidebar() {
         } lg:translate-x-0 fixed lg:static w-[280px] h-screen bg-white dark:bg-[#1f2937] border-r border-gray-200 dark:border-gray-700 flex flex-col transition-all duration-300 z-40`}
       >
         {/* Logo */}
-        <div className="h-[60px] flex items-center justify-center border-b border-gray-200 dark:border-gray-700 px-4">
+        <div className="h-[68px] flex items-center justify-center border-b border-gray-200 dark:border-gray-700 px-4">
           <div className="flex items-center gap-3">
-            <ImageWithFallback
-              src="/logoicon.png"
-              alt="5-son Texnikumi Logo"
-              className="w-10 h-10"
-              objectFit="contain"
-            />
-            <div className="text-center">
-              <h1 className="text-lg font-bold text-[#0a3674]">5-son Texnikum</h1>
-              <p className="text-xs text-[#64748b] dark:text-gray-400">Admin Panel</p>
+            <div className="w-12 h-12 rounded-full overflow-hidden flex items-center justify-center bg-blue-50/50 dark:bg-gray-800 flex-shrink-0">
+              <ImageWithFallback
+                src="/logoicon.png"
+                alt="5-son Texnikumi Logo"
+                className="w-10 h-10 rounded-full"
+                objectFit="contain"
+              />
+            </div>
+            <div className="text-left">
+              <h1 className="text-base font-bold text-[#0a3674] leading-tight">5-son Texnikum</h1>
+              <p className="text-[11px] text-[#64748b] dark:text-gray-400">Admin Panel</p>
             </div>
           </div>
         </div>

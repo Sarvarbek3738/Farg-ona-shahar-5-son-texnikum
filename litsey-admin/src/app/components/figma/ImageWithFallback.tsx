@@ -45,7 +45,7 @@ export function ImageWithFallback({
           src={src}
           alt={alt}
           className={`w-full h-full transition-opacity duration-300 ${isLoading ? 'opacity-0' : 'opacity-100'}`}
-          style={{ objectFit }}
+          style={{ objectFit, objectPosition: (style as any)?.objectPosition || 'center top' }}
           loading={loading}
           decoding="async"
           onError={handleError}

@@ -5,6 +5,7 @@ import { ImageUpload } from "../components/ImageUpload";
 import { toast } from "sonner";
 import { API_BASE_URL, getImageUrl } from "../../config/api";
 import { PageSkeleton as SkeletonLoader } from "../components/PageSkeleton";
+import { useSettings } from "../context/SettingsContext";
 
 interface Settings {
   id: number;
@@ -41,17 +42,67 @@ interface Settings {
   };
 }
 
+const normalizeUrl = (url: string | undefined | null): string => {
+  if (!url || !url.trim()) return "";
+  let clean = url.trim();
+  if (!clean.startsWith("http://") && !clean.startsWith("https://")) {
+    clean = `https://${clean}`;
+  }
+  return clean;
+};
+
+const normalizeTelegram = (val: string | undefined | null): string => {
+  if (!val || !val.trim()) return "";
+  let clean = val.trim();
+  if (clean.startsWith("@")) {
+    return `https://t.me/${clean.slice(1)}`;
+  }
+  if (!clean.startsWith("http://") && !clean.startsWith("https://")) {
+    if (clean.startsWith("t.me/")) {
+      return `https://${clean}`;
+    }
+    return `https://t.me/${clean}`;
+  }
+  return clean;
+};
+
+const normalizeInstagram = (val: string | undefined | null): string => {
+  if (!val || !val.trim()) return "";
+  let clean = val.trim();
+  if (clean.startsWith("@")) {
+    return `https://www.instagram.com/${clean.slice(1)}`;
+  }
+  if (!clean.startsWith("http://") && !clean.startsWith("https://")) {
+    if (clean.startsWith("instagram.com/") || clean.startsWith("www.instagram.com/")) {
+      return `https://${clean}`;
+    }
+    return `https://www.instagram.com/${clean}`;
+  }
+  return clean;
+};
+
+const normalizeSocial = (val: string | undefined | null): string => {
+  if (!val || !val.trim()) return "";
+  let clean = val.trim();
+  if (!clean.startsWith("http://") && !clean.startsWith("https://")) {
+    return `https://${clean}`;
+  }
+  return clean;
+};
+
 export default function Sozlamalar() {
+  const { refreshSettings } = useSettings();
   const [loading, setLoading] = useState(true);
   const [isSaving, setIsSaving] = useState(false);
   const [settings, setSettings] = useState<Settings | null>(null);
 
-  const [activeTab, setActiveTab] = useState<"uz" | "ru">("uz");
+  const [activeTab, setActiveTab] = useState<"uz" | "ru" | "en">("uz");
 
   const [formData, setFormData] = useState({
     translations: {
       uz: { short_name: "", full_name: "", address: "" },
       ru: { short_name: "", full_name: "", address: "" },
+      en: { short_name: "", full_name: "", address: "" },
     },
     established_year: 0,
     phone: "",
@@ -67,8 +118,7 @@ export default function Sozlamalar() {
   const languages = [
     { id: "uz", label: "O'zbekcha" },
     { id: "ru", label: "Русский" },
-    // { id: "en", label: "English" },
-    // { id: "uz_cyrl", label: "Криллча" },
+    { id: "en", label: "English" },
   ] as const;
 
   useEffect(() => {
@@ -86,7 +136,6 @@ export default function Sozlamalar() {
       
       const data = await response.json();
       if (response.ok) {
-        // Handle direct object or list response
         const settingsData = Array.isArray(data) ? data[0] : (data.results ? data.results[0] : data);
         
         if (settingsData && settingsData.id) {
@@ -95,6 +144,7 @@ export default function Sozlamalar() {
             translations: {
               uz: settingsData.translations?.uz || { short_name: "", full_name: "", address: "" },
               ru: settingsData.translations?.ru || { short_name: "", full_name: "", address: "" },
+              en: settingsData.translations?.en || { short_name: "", full_name: "", address: "" },
             },
             established_year: settingsData.established_year || 0,
             phone: settingsData.phone || "",
@@ -123,22 +173,40 @@ export default function Sozlamalar() {
     const data = new FormData();
 
     // Translations fields
-    if (formData.translations.uz.short_name) data.append("short_name_uz", formData.translations.uz.short_name);
-    if (formData.translations.uz.full_name) data.append("full_name_uz", formData.translations.uz.full_name);
-    if (formData.translations.uz.address) data.append("address_uz", formData.translations.uz.address);
-    if (formData.translations.ru.short_name) data.append("short_name_ru", formData.translations.ru.short_name);
-    if (formData.translations.ru.full_name) data.append("full_name_ru", formData.translations.ru.full_name);
-    if (formData.translations.ru.address) data.append("address_ru", formData.translations.ru.address);
+    if (formData.translations.uz?.short_name) data.append("short_name_uz", formData.translations.uz.short_name);
+    if (formData.translations.uz?.full_name) data.append("full_name_uz", formData.translations.uz.full_name);
+    if (formData.translations.uz?.address) data.append("address_uz", formData.translations.uz.address);
 
-    // Other fields
-    if (formData.established_year) data.append("established_year", String(formData.established_year));
+    if (formData.translations.ru?.short_name) data.append("short_name_ru", formData.translations.ru.short_name);
+    if (formData.translations.ru?.full_name) data.append("full_name_ru", formData.translations.ru.full_name);
+    if (formData.translations.ru?.address) data.append("address_ru", formData.translations.ru.address);
+
+    if (formData.translations.en?.short_name) data.append("short_name_en", formData.translations.en.short_name);
+    if (formData.translations.en?.full_name) data.append("full_name_en", formData.translations.en.full_name);
+    if (formData.translations.en?.address) data.append("address_en", formData.translations.en.address);
+
+    // Other fields with safe validation
+    if (formData.established_year && Number(formData.established_year) >= 1900 && Number(formData.established_year) <= 2100) {
+      data.append("established_year", String(formData.established_year));
+    }
     if (formData.phone) data.append("phone", formData.phone);
     if (formData.email) data.append("email", formData.email);
-    if (formData.website) data.append("website", formData.website);
-    if (formData.telegram) data.append("telegram", formData.telegram);
-    if (formData.instagram) data.append("instagram", formData.instagram);
-    if (formData.facebook) data.append("facebook", formData.facebook);
-    if (formData.youtube) data.append("youtube", formData.youtube);
+
+    // Normalized URLs so Django URLField validation always passes
+    const cleanWebsite = normalizeUrl(formData.website);
+    if (cleanWebsite) data.append("website", cleanWebsite);
+
+    const cleanTelegram = normalizeTelegram(formData.telegram);
+    if (cleanTelegram) data.append("telegram", cleanTelegram);
+
+    const cleanInstagram = normalizeInstagram(formData.instagram);
+    if (cleanInstagram) data.append("instagram", cleanInstagram);
+
+    const cleanFacebook = normalizeSocial(formData.facebook);
+    if (cleanFacebook) data.append("facebook", cleanFacebook);
+
+    const cleanYoutube = normalizeSocial(formData.youtube);
+    if (cleanYoutube) data.append("youtube", cleanYoutube);
 
     if (formData.logo instanceof File) {
       data.append("logo", formData.logo);
@@ -156,7 +224,8 @@ export default function Sozlamalar() {
 
       if (response.ok) {
         toast.success("Sozlamalar muvaffaqiyatli saqlandi");
-        fetchSettings();
+        await fetchSettings();
+        await refreshSettings?.();
       } else {
         const errData = await response.json();
         if (errData && typeof errData === 'object') {
@@ -236,7 +305,7 @@ export default function Sozlamalar() {
                       <button
                         key={lang.id}
                         type="button"
-                        onClick={() => setActiveTab(lang.id as "uz" | "ru")}
+                        onClick={() => setActiveTab(lang.id)}
                         className={`px-3 py-1 text-xs font-bold rounded-md transition-all ${
                           activeTab === lang.id 
                             ? "bg-white dark:bg-gray-700 text-[#0a3674] shadow-sm" 

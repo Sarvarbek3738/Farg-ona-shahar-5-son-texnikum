@@ -54,6 +54,7 @@ class TeacherSerializer(serializers.Serializer):
     department_name = serializers.SerializerMethodField()
     photo = serializers.SerializerMethodField()
     email = serializers.EmailField(allow_null=True, allow_blank=True)
+    phone = serializers.CharField(allow_null=True, allow_blank=True)
     sort_order = serializers.IntegerField()
     is_active = serializers.BooleanField()
     created_at = serializers.DateTimeField(read_only=True)
@@ -113,8 +114,19 @@ class TeacherWriteSerializer(serializers.Serializer):
     department = serializers.IntegerField(required=False, allow_null=True, help_text="Kafedra ID si")
     photo = serializers.ImageField(required=False, allow_null=True, help_text="Rasm (multipart/form-data). Maks: 8 MB.")
     email = serializers.EmailField(required=False, allow_blank=True, allow_null=True)
+    phone = serializers.CharField(max_length=50, required=False, allow_blank=True, allow_null=True)
     is_active = serializers.BooleanField(default=True)
     sort_order = serializers.IntegerField(default=0)
+
+    def to_internal_value(self, data):
+        data = data.copy() if hasattr(data, 'copy') else dict(data)
+        if 'department' in data and (data['department'] == '' or data['department'] == 'null'):
+            data['department'] = None
+        if 'experience_years' in data and data['experience_years'] == '':
+            data['experience_years'] = 0
+        if 'sort_order' in data and data['sort_order'] == '':
+            data['sort_order'] = 0
+        return super().to_internal_value(data)
 
     def validate_department(self, value):
         if value is None:
@@ -166,6 +178,14 @@ class DepartmentSerializer(serializers.Serializer):
     """Read serializer — ro'yxat uchun."""
     id = serializers.IntegerField(read_only=True)
     slug = serializers.SlugField(read_only=True)
+    name_uz = serializers.CharField(read_only=True)
+    name_uz_cyrl = serializers.CharField(read_only=True)
+    name_ru = serializers.CharField(read_only=True)
+    name_en = serializers.CharField(read_only=True)
+    description_uz = serializers.CharField(read_only=True)
+    description_uz_cyrl = serializers.CharField(read_only=True)
+    description_ru = serializers.CharField(read_only=True)
+    description_en = serializers.CharField(read_only=True)
     translations = serializers.SerializerMethodField()
     head_teacher = serializers.SerializerMethodField()
     subjects = serializers.ListField(child=serializers.CharField(), allow_null=True)
@@ -218,6 +238,14 @@ class DepartmentWriteSerializer(serializers.Serializer):
     email = serializers.EmailField(required=False, allow_blank=True, allow_null=True)
     sort_order = serializers.IntegerField(default=0)
     is_active = serializers.BooleanField(default=True)
+
+    def to_internal_value(self, data):
+        data = data.copy() if hasattr(data, 'copy') else dict(data)
+        if 'head_teacher' in data and (data['head_teacher'] == '' or data['head_teacher'] == 'null'):
+            data['head_teacher'] = None
+        if 'sort_order' in data and data['sort_order'] == '':
+            data['sort_order'] = 0
+        return super().to_internal_value(data)
 
     def validate_head_teacher(self, value):
         if value is None:

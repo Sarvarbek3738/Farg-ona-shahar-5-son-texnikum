@@ -49,6 +49,14 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
   }, []);
 
+  useEffect(() => {
+    const handleLogoutEvent = () => {
+      logout();
+    };
+    window.addEventListener("auth:logout", handleLogoutEvent);
+    return () => window.removeEventListener("auth:logout", handleLogoutEvent);
+  }, []);
+
   const login = () => {
     const userData = sessionStorage.getItem("auth_user");
     if (userData) {

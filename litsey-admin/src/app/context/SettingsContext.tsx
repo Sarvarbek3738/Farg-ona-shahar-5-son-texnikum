@@ -23,6 +23,11 @@ interface Settings {
       full_name: string;
       address: string;
     };
+    en?: {
+      short_name: string;
+      full_name: string;
+      address: string;
+    };
   };
 }
 

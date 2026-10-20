@@ -261,6 +261,8 @@ export default function Rahbariyat() {
                     src={getImageUrl(leader.photo)}
                     alt={leader.full_name}
                     className="w-32 h-32 rounded-full object-cover border-4 border-[#0a3674]/10 dark:border-[#0a3674]/20"
+                    objectFit="cover"
+                    style={{ objectPosition: 'center top' }}
                   />
                   <h3 className="text-lg font-semibold text-[#1f2937] dark:text-gray-100 mt-4">
                     {leader.full_name}

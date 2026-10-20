@@ -3,7 +3,11 @@ import App from "./app/App";
 import { AuthProvider } from "./app/context/AuthContext";
 import { ThemeProvider } from "next-themes";
 import { HelmetProvider } from "react-helmet-async";
+import { setupAuthInterceptor } from "./config/authInterceptor";
 import "./styles/index.css";
+
+// Intercept 401s and auto-refresh or cleanly logout
+setupAuthInterceptor();
 
 // Auto-reload on deployment chunk update
 if (typeof window !== "undefined") {

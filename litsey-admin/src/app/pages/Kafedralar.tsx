@@ -82,7 +82,15 @@ export default function Kafedralar() {
 
       if (deptRes.ok) {
         const data = await deptRes.json();
-        setDepartments(Array.isArray(data) ? data : data.results || []);
+        const rawList = Array.isArray(data) ? data : data.results || [];
+        const normalized = rawList.map((d: any) => ({
+          ...d,
+          name_uz: d.name_uz || d.translations?.uz?.name || "",
+          name_ru: d.name_ru || d.translations?.ru?.name || "",
+          description_uz: d.description_uz || d.translations?.uz?.description || "",
+          description_ru: d.description_ru || d.translations?.ru?.description || "",
+        }));
+        setDepartments(normalized);
       }
       if (teacherRes.ok) {
         const data = await teacherRes.json();
@@ -95,9 +103,10 @@ export default function Kafedralar() {
     }
   };
 
-  const filteredDepartments = departments.filter((d) =>
-    (d.name_uz || "").toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  const filteredDepartments = departments.filter((d) => {
+    const name = d.name_uz || (d as any).translations?.uz?.name || "";
+    return name.toLowerCase().includes(searchQuery.toLowerCase());
+  });
 
   const handleAdd = () => {
     setEditingDept(null);
@@ -120,11 +129,12 @@ export default function Kafedralar() {
 
   const handleEdit = (dept: Department) => {
     setEditingDept(dept);
+    const trans = (dept as any).translations || {};
     setFormData({
-      name_uz: dept.name_uz || "",
-      name_ru: dept.name_ru || "",
-      description_uz: dept.description_uz || "",
-      description_ru: dept.description_ru || "",
+      name_uz: dept.name_uz || trans.uz?.name || "",
+      name_ru: dept.name_ru || trans.ru?.name || "",
+      description_uz: dept.description_uz || trans.uz?.description || "",
+      description_ru: dept.description_ru || trans.ru?.description || "",
       head_teacher: (dept.head_teacher && typeof dept.head_teacher === 'object') ? dept.head_teacher.id : (dept.head_teacher || ""),
       subjects: dept.subjects || [],
       room_number: dept.room_number || "",
@@ -203,7 +213,13 @@ export default function Kafedralar() {
         fetchData();
       } else {
         const errData = await response.json();
-        toast.error(errData.detail || "Xatolik yuz berdi");
+        const msg = typeof errData === 'object' ? (errData.detail || errData.message || Object.values(errData).flat().join(", ")) : "Xatolik yuz berdi";
+        if (typeof msg === 'string' && msg.toLowerCase().includes("token")) {
+          toast.error("Sessiya muddati tugagan. Iltimos, qaytadan tizimga kiring.");
+          window.dispatchEvent(new CustomEvent("auth:logout"));
+        } else {
+          toast.error(msg || "Xatolik yuz berdi");
+        }
       }
     } catch (error) {
       toast.error("Server bilan bog'lanishda xatolik");
@@ -295,7 +311,7 @@ export default function Kafedralar() {
               </div>
               <div className="min-w-0">
                 <h3 className="font-bold text-[#1f2937] dark:text-gray-100 text-lg truncate">
-                  {dept.name_uz}
+                  {dept.name_uz || (dept as any).translations?.uz?.name || `Kafedra #${dept.id}`}
                 </h3>
                 <div className="flex items-center gap-2 mt-1">
                   <span className={`w-2 h-2 rounded-full ${dept.is_active ? 'bg-green-500' : 'bg-red-500'}`} />

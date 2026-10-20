@@ -4,6 +4,8 @@
   "private": true,
   "description": "5-sonli Politexnika Texnikumi veb platformasi (Backend, Frontend, Admin)",
   "scripts": {
+    "dev": "npm --prefix litsey run dev",
+    "dev:admin": "npm --prefix litsey-admin run dev",
     "start:backend": "cd akademiklitsey-backend && .\\venv\\Scripts\\python.exe manage.py runserver 8000",
     "start:frontend": "npm --prefix litsey run dev",
     "start:admin": "npm --prefix litsey-admin run dev",

@@ -22,6 +22,10 @@ interface Department {
   slug: string;
   name_uz: string;
   name_ru?: string;
+  translations?: {
+    uz?: { name?: string };
+    ru?: { name?: string };
+  };
 }
 
 interface Teacher {
@@ -34,6 +38,7 @@ interface Teacher {
   experience_years: number;
   sort_order: number;
   department: number | Department;
+  department_name?: string | null;
   email: string;
   phone?: string;
   photo: string;
@@ -57,8 +62,8 @@ export default function Oqituvchilar() {
 
   const [formData, setFormData] = useState({
     full_name: "",
-    academic_degree: "Yo'q",
-    academic_rank: "Yo'q",
+    academic_degree: "",
+    academic_rank: "",
     category: "none",
     experience_years: 0,
     sort_order: 0,
@@ -91,7 +96,7 @@ export default function Oqituvchilar() {
     try {
       const token = sessionStorage.getItem("auth_token");
       const [teacherRes, deptRes] = await Promise.all([
-        fetch(`${API_BASE_URL}/teachers/`, {
+        fetch(`${API_BASE_URL}/teachers/?page_size=100`, {
           headers: { Authorization: `Bearer ${token}` },
         }),
         fetch(`${API_BASE_URL}/departments/`, {
@@ -108,7 +113,13 @@ export default function Oqituvchilar() {
 
       if (deptRes.ok) {
         const data = await deptRes.json();
-        setDepartments(Array.isArray(data) ? data : data.results || []);
+        const rawList = Array.isArray(data) ? data : data.results || [];
+        const normalized = rawList.map((d: any) => ({
+          ...d,
+          name_uz: d.name_uz || d.translations?.uz?.name || `Kafedra #${d.id}`,
+          name_ru: d.name_ru || d.translations?.ru?.name || "",
+        }));
+        setDepartments(normalized);
       }
     } catch (error) {
       toast.error("Server bilan bog'lanishda xatolik");
@@ -123,12 +134,29 @@ export default function Oqituvchilar() {
       )
     : [];
 
+  const getTeacherDeptName = (teacher: Teacher) => {
+    if (teacher.department_name) {
+      return teacher.department_name;
+    }
+    const deptId = typeof teacher.department === 'object' && teacher.department ? teacher.department.id : teacher.department;
+    if (deptId) {
+      const found = departments.find((d) => d.id === Number(deptId));
+      if (found) {
+        return found.name_uz || found.translations?.uz?.name || `Kafedra #${found.id}`;
+      }
+      if (typeof teacher.department === 'object' && teacher.department) {
+        return (teacher.department as any).name_uz || (teacher.department as any).translations?.uz?.name || '';
+      }
+    }
+    return "Kafedrasiz";
+  };
+
   const handleAdd = () => {
     setEditingTeacher(null);
     setFormData({
       full_name: "",
-      academic_degree: "Yo'q",
-      academic_rank: "Yo'q",
+      academic_degree: "",
+      academic_rank: "",
       category: "none",
       experience_years: 0,
       sort_order: 0,
@@ -153,8 +181,8 @@ export default function Oqituvchilar() {
     setEditingTeacher(teacher);
     setFormData({
       full_name: teacher.full_name || "",
-      academic_degree: teacher.academic_degree || "Yo'q",
-      academic_rank: teacher.academic_rank || "Yo'q",
+      academic_degree: (teacher.academic_degree && teacher.academic_degree.toLowerCase() !== "yo'q") ? teacher.academic_degree : "",
+      academic_rank: (teacher.academic_rank && teacher.academic_rank.toLowerCase() !== "yo'q") ? teacher.academic_rank : "",
       category: teacher.category || "none",
       experience_years: teacher.experience_years,
       sort_order: teacher.sort_order || 0,
@@ -208,8 +236,8 @@ export default function Oqituvchilar() {
 
     // Required fields based on API docs
     data.append("full_name", formData.full_name);
-    data.append("academic_degree", formData.academic_degree || "Yo'q");
-    data.append("academic_rank", formData.academic_rank || "Yo'q");
+    data.append("academic_degree", formData.academic_degree.trim() || "Yo'q");
+    data.append("academic_rank", formData.academic_rank.trim() || "Yo'q");
     data.append("category", formData.category || "none");
     data.append("experience_years", String(formData.experience_years || 0));
     data.append("sort_order", String(formData.sort_order || 0));
@@ -231,6 +259,8 @@ export default function Oqituvchilar() {
     
     if (formData.department && formData.department !== "") {
       data.append("department", String(formData.department));
+    } else {
+      data.append("department", "");
     }
 
     if (formData.photo instanceof File) {
@@ -256,6 +286,12 @@ export default function Oqituvchilar() {
       } else {
         const errData = await response.json();
         if (errData && typeof errData === 'object') {
+          const detail = (errData as any).detail || "";
+          if (typeof detail === 'string' && detail.toLowerCase().includes("token")) {
+            toast.error("Sessiya muddati tugagan. Iltimos, qaytadan tizimga kiring.");
+            window.dispatchEvent(new CustomEvent("auth:logout"));
+            return;
+          }
           const errorMessages = Object.entries(errData)
             .map(([field, msgs]) => `${field}: ${Array.isArray(msgs) ? msgs.join(', ') : msgs}`)
             .join('\n');
@@ -379,6 +415,8 @@ export default function Oqituvchilar() {
                         src={getImageUrl(teacher.photo)}
                         alt={teacher.full_name}
                         className="w-12 h-12 rounded-full object-cover"
+                        objectFit="cover"
+                        style={{ objectPosition: 'center top' }}
                       />
                     </td>
                     <td className="px-6 py-4">
@@ -395,9 +433,8 @@ export default function Oqituvchilar() {
                       </span>
                     </td>
                     <td className="px-6 py-4">
-                      <span className="text-sm text-[#64748b] dark:text-gray-400">
-                        {teacher.department && typeof teacher.department === 'object' ? teacher.department.name_uz : 
-                         (teacher.department ? departments.find(d => d.id === teacher.department)?.name_uz : null) || "Kafedrasiz"}
+                      <span className="text-sm font-medium text-[#64748b] dark:text-gray-400">
+                        {getTeacherDeptName(teacher)}
                       </span>
                     </td>
                     <td className="px-6 py-4">
@@ -455,6 +492,8 @@ export default function Oqituvchilar() {
                     src={getImageUrl(teacher.photo)}
                     alt={teacher.full_name}
                     className="w-20 h-20 rounded-full object-cover"
+                    objectFit="cover"
+                    style={{ objectPosition: 'center top' }}
                   />
                   <div className="flex-1 min-w-0">
                     <h3 className="text-base font-semibold text-[#1f2937] dark:text-gray-100 truncate">
@@ -469,9 +508,8 @@ export default function Oqituvchilar() {
                 <div className="mt-4 space-y-2">
                   <div className="text-sm">
                     <span className="text-[#64748b] dark:text-gray-400">Kafedra:</span>
-                    <p className="text-[#1f2937] dark:text-gray-200 mt-1">
-                      {teacher.department && typeof teacher.department === 'object' ? teacher.department.name_uz : 
-                       (teacher.department ? departments.find(d => d.id === teacher.department)?.name_uz : null) || "Kafedrasiz"}
+                    <p className="text-[#1f2937] dark:text-gray-200 mt-1 font-medium">
+                      {getTeacherDeptName(teacher)}
                     </p>
                   </div>
                   <div className="text-sm">
@@ -482,6 +520,12 @@ export default function Oqituvchilar() {
                     <span className="text-[#64748b] dark:text-gray-400">Email:</span>
                     <p className="text-[#1f2937] dark:text-gray-200 mt-1">{teacher.email || "Ko'rsatilmagan"}</p>
                   </div>
+                  {teacher.academic_degree && teacher.academic_degree.toLowerCase() !== "yo'q" && (
+                    <div className="text-sm">
+                      <span className="text-[#64748b] dark:text-gray-400">Sertifikat / Daraja:</span>
+                      <p className="text-[#1f2937] dark:text-gray-200 mt-1 font-medium">{teacher.academic_degree}</p>
+                    </div>
+                  )}
                 </div>
 
                 <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700 flex items-center gap-2">
@@ -612,9 +656,50 @@ export default function Oqituvchilar() {
                             <option value="">Kafedrani tanlang</option>
                             {departments.map((dept) => (
                               <option key={dept.id} value={dept.id}>
-                                {dept.name_uz}
+                                {dept.name_uz || (dept as any).translations?.uz?.name || `Kafedra #${dept.id}`}
                               </option>
                             ))}
+                          </select>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                          <div>
+                            <label className="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">
+                              Sertifikat yoki ilmiy daraja
+                            </label>
+                            <input
+                              type="text"
+                              value={formData.academic_degree}
+                              onChange={(e) => setFormData({ ...formData, academic_degree: e.target.value })}
+                              placeholder="Masalan: A darajali sertifikat, B2 sertifikat..."
+                              className="w-full px-5 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-4 focus:ring-[#0a3674]/10 focus:border-[#0a3674] outline-none transition-all dark:text-gray-100"
+                            />
+                          </div>
+                          <div>
+                            <label className="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">
+                              Ilmiy unvon
+                            </label>
+                            <input
+                              type="text"
+                              value={formData.academic_rank}
+                              onChange={(e) => setFormData({ ...formData, academic_rank: e.target.value })}
+                              placeholder="Masalan: Katta o'qituvchi, Dotsent (ixtiyoriy)"
+                              className="w-full px-5 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-4 focus:ring-[#0a3674]/10 focus:border-[#0a3674] outline-none transition-all dark:text-gray-100"
+                            />
+                          </div>
+                        </div>
+                        <div>
+                          <label className="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">
+                            Toifasi
+                          </label>
+                          <select
+                            value={formData.category}
+                            onChange={(e) => setFormData({ ...formData, category: e.target.value })}
+                            className="w-full px-5 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-4 focus:ring-[#0a3674]/10 focus:border-[#0a3674] outline-none transition-all dark:text-gray-100"
+                          >
+                            <option value="none">Toifasiz</option>
+                            <option value="second">Ikkinchi toifa</option>
+                            <option value="first">Birinchi toifa</option>
+                            <option value="highest">Oliy toifa</option>
                           </select>
                         </div>
                       </div>

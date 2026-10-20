@@ -113,6 +113,7 @@ class Teacher(models.Model):
     )
     photo = models.ImageField(upload_to='teacher_photos/', null=True, blank=True, verbose_name="Rasm")
     email = models.EmailField(max_length=150, null=True, blank=True, verbose_name="Email")
+    phone = models.CharField(max_length=50, null=True, blank=True, verbose_name="Telefon")
     is_active = models.BooleanField(default=True, verbose_name="Faolmi")
     sort_order = models.IntegerField(default=0, verbose_name="Tartib")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Yaratilgan vaqt")
