@@ -1,0 +1,1 @@
+# Farg-ona-shahar-5-son-texnikum
