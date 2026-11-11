@@ -22,7 +22,7 @@
   },
   "seo": {
     "defaultTitle": "Fergana City Technicum No. 5",
-    "titleTemplate": "%s | Fergana City Technicum No. 5",
+    "titleTemplate": "{{title}} | Fergana City Technicum No. 5",
     "defaultDescription": "Fergana City Technicum No. 5 — modern professional education institution offering full-time and dual education programs for 9th grade graduates.",
     "keywords": "Technicum No. 5, Fergana Technicum No. 5, professional education, admission 2026, dual education, vocational school"
   },

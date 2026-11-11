@@ -22,7 +22,7 @@
   },
   "seo": {
     "defaultTitle": "Farg'ona shahar 5-son texnikumi",
-    "titleTemplate": "%s | Farg'ona shahar 5-son texnikumi",
+    "titleTemplate": "{{title}} | Farg'ona shahar 5-son texnikumi",
     "defaultDescription": "Farg'ona shahar 5-son texnikumi — 9-sinf bitiruvchilari uchun kunduzgi va dual ta'lim shaklidagi zamonaviy kasb-hunar ta'lim muassasasi.",
     "keywords": "5-son texnikum, Farg'ona 5-son texnikumi, ta'lim, kasb-hunar, qabul 2026, dual ta'lim, texnikum"
   },

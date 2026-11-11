@@ -6,6 +6,7 @@ import { announcementService } from '../services/announcementService';
 import { Announcement } from '../types';
 import { motion } from 'framer-motion';
 import { Skeleton } from '../components/ui/skeleton';
+import { SEO } from '../components/layout/SEO';
 
 const defaultAnnouncements: Announcement[] = [
   {
@@ -110,6 +111,7 @@ export function AnnouncementsPage() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-950 transition-colors duration-300">
+      <SEO title={t('home.announcements.allAnnouncements', "Barcha e'lonlar")} />
       {/* Page Header */}
       <div className="bg-gradient-to-r from-[#0a3674] to-[#0a3674] text-white py-20 md:py-32 relative">
         <div className="absolute inset-0 bg-black/10"></div>

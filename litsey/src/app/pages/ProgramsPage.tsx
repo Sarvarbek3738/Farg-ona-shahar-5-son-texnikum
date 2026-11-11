@@ -1,6 +1,7 @@
 import { GraduationCap, Target, BookOpen, FlaskConical, Globe, Users } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
+import { SEO } from '../components/layout/SEO';
 
 export function ProgramsPage() {
   const { t } = useTranslation();
@@ -30,6 +31,7 @@ export function ProgramsPage() {
 
   return (
     <div className="min-h-screen overflow-hidden bg-white dark:bg-gray-950 transition-colors duration-300">
+      <SEO title={t('nav.programs')} />
       {/* Page Header */}
       <div className="bg-gradient-to-r from-[#0a3674] to-[#0a3674] text-white py-24 md:py-32 relative">
         <div className="absolute inset-0 bg-black/10"></div>

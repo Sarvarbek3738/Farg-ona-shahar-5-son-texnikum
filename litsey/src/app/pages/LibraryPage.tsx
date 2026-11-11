@@ -1,6 +1,7 @@
 import { BookOpen, Search, Download, Clock } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
+import { SEO } from '../components/layout/SEO';
 
 export function LibraryPage() {
   const { t, i18n } = useTranslation();
@@ -36,6 +37,7 @@ export function LibraryPage() {
 
   return (
     <div className="min-h-screen overflow-hidden bg-white dark:bg-gray-950 transition-colors duration-300">
+      <SEO title={t('nav.library')} />
       {/* Page Header */}
       <div className="bg-gradient-to-r from-[#0a3674] to-[#0a3674] text-white py-24 md:py-32 relative">
         <div className="absolute inset-0 bg-black/10"></div>

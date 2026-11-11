@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import { videoService } from '../services/videoService';
 import { Video } from '../types';
 import { Skeleton } from '../components/ui/skeleton';
+import { SEO } from '../components/layout/SEO';
 
 export function VideosPage() {
   const { t, i18n } = useTranslation();
@@ -33,6 +34,7 @@ export function VideosPage() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-950 transition-colors duration-300">
+      <SEO title={t('nav.videos')} />
       {/* Breadcrumbs */}
       <div className="bg-gray-50 dark:bg-gray-900/50 border-b border-gray-100 dark:border-gray-800">
         <div className="container mx-auto px-4 py-4">

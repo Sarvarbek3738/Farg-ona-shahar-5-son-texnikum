@@ -1,12 +1,14 @@
 import { Home, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router';
 import { useTranslation } from 'react-i18next';
+import { SEO } from '../components/layout/SEO';
 
 export function NotFoundPage() {
   const { t } = useTranslation();
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-950 flex items-center justify-center px-4 transition-colors duration-300">
+      <SEO title={t('notFound.title', '404 - Sahifa topilmadi')} />
       <div className="text-center max-w-2xl">
         <div className="mb-8">
           <h1 className="text-9xl font-black text-[#0a3674] mb-4 tracking-tighter">404</h1>

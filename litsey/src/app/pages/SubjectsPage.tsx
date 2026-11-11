@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { admissionService } from '../services/admissionService';
 import { Subject } from '../types';
+import { SEO } from '../components/layout/SEO';
 
 export function SubjectsPage() {
   const { t, i18n } = useTranslation();
@@ -51,6 +52,7 @@ export function SubjectsPage() {
 
   return (
     <div className="min-h-screen overflow-hidden bg-white dark:bg-gray-950 transition-colors duration-300">
+      <SEO title={t('nav.subjects')} />
       {/* Page Header */}
       <div className="bg-gradient-to-r from-[#0a3674] to-[#0a6d8f] text-white py-24 md:py-32 relative">
         <div className="absolute inset-0 bg-black/10"></div>

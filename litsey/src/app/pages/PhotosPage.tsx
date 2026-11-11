@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { Skeleton } from '../components/ui/skeleton';
+import { SEO } from '../components/layout/SEO';
 
 export function PhotosPage() {
   const { t } = useTranslation();
@@ -58,6 +59,7 @@ export function PhotosPage() {
 
   return (
     <div className="min-h-screen bg-[#f8f9fa] dark:bg-gray-950 transition-colors duration-300">
+      <SEO title={t('nav.photos')} />
       {/* Page Header */}
       <div className="py-12 bg-white dark:bg-gray-950">
         <div className="container mx-auto px-4 text-center">

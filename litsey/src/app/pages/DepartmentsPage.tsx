@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router';
 import { departmentService } from '../services/departmentService';
 import { Department } from '../types';
+import { SEO } from '../components/layout/SEO';
 
 export function DepartmentsPage() {
   const { t, i18n } = useTranslation();
@@ -44,6 +45,7 @@ export function DepartmentsPage() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-950 transition-colors duration-300">
+      <SEO title={t('nav.departments')} />
       {/* Breadcrumbs */}
       <div className="bg-gray-50 dark:bg-gray-900/50 border-b border-gray-100 dark:border-gray-800">
         <div className="container mx-auto px-4 py-4">
