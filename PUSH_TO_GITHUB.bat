@@ -19,10 +19,11 @@ echo ============================================================
 echo.
 git subtree split --prefix=litsey -b __deploy_temp >nul 2>&1
 git push texnikum-frontend __deploy_temp:master --force
+git push texnikum-frontend __deploy_temp:main --force
 git branch -D __deploy_temp >nul 2>&1
 
 if %ERRORLEVEL% equ 0 (
-    echo [OK] Netlify repozitoriyasi muvaffaqiyatli yuklandi: Sarvarbek3738/Texnikum
+    echo [OK] Netlify repozitoriyasi muvaffaqiyatli yuklandi: Sarvarbek3738/Texnikum (master va main)
     echo      Netlify avtomatik yangilanishni boshladi!
 ) else (
     echo [XATOLIK] Netlify repozitoriyasiga yuklashda xatolik yuz berdi.
