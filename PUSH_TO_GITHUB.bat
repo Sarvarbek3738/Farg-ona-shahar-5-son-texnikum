@@ -1,17 +1,35 @@
 @echo off
-title Farg'ona 5-son Politexnika Texnikumi - GitHub-ga yuklash
+title Farg'ona 5-son Politexnika Texnikumi - GitHub va Netlify-ga yuklash
 cd /d "%~dp0"
 echo ============================================================
-echo   Loyiha GitHub-ga yuklanmoqda...
+echo   1. Asosiy repozitoriyga yuklanmoqda (Backend + Frontend + Admin)...
 echo ============================================================
 echo.
-"C:\Program Files\Git\cmd\git.exe" push -u origin main
-echo.
+git push -u origin main
 if %ERRORLEVEL% equ 0 (
-    echo [MUVAFFAQIYAT] Loyiha GitHub-ga muvaffaqiyatli yuklandi!
+    echo [OK] Asosiy repozitoriy muvaffaqiyatli yuklandi: Farg-ona-shahar-5-son-texnikum
 ) else (
-    echo [XATOLIK] Yuklashda xatolik yuz berdi. 
-    echo Agar brauzerda GitHub oynasi ochilsa, 'Sign in with your browser' tugmasini bosing.
+    echo [XATOLIK] Asosiy repozitoriyga yuklashda xatolik yuz berdi.
 )
+
 echo.
+echo ============================================================
+echo   2. Netlify repozitoriyasiga yuklanmoqda (Frontend / Texnikum)...
+echo ============================================================
+echo.
+git subtree split --prefix=litsey -b __deploy_temp >nul 2>&1
+git push texnikum-frontend __deploy_temp:master --force
+git branch -D __deploy_temp >nul 2>&1
+
+if %ERRORLEVEL% equ 0 (
+    echo [OK] Netlify repozitoriyasi muvaffaqiyatli yuklandi: Sarvarbek3738/Texnikum
+    echo      Netlify avtomatik yangilanishni boshladi!
+) else (
+    echo [XATOLIK] Netlify repozitoriyasiga yuklashda xatolik yuz berdi.
+)
+
+echo.
+echo ============================================================
+echo   Barcha yangilanishlar yakunlandi!
+echo ============================================================
 pause
